@@ -314,8 +314,6 @@ backBtn.addEventListener("click", () => {
 });
 
 
-
-
 // ======================
 // START QUIZ
 // ======================
@@ -359,4 +357,3 @@ document.querySelectorAll("button").forEach(button => {
     playClickSound();
   });
 });
-
