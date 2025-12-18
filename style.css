@@ -151,9 +151,10 @@ footer {
 
 
 #musicControls {
-  position: fixed;
-  top: 15px;
-  right: 15px;
+position: fixed;
+  bottom: 140px;
+  right: 20px;
+  top: auto;
   z-index: 1000;
   text-align: center;
 }
@@ -197,10 +198,10 @@ footer {
 
 #volumeLabel {
   font-family: 'Press Start 2P', cursive;
-  font-size: 25px;
+  font-size: 20px;
   margin-top: 4px;
-  color: #fcfcfc;
-  opacity: 0.8;
+  color: #000000;
+  opacity: 100;
 }
 
 
