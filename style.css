@@ -231,10 +231,6 @@ position: fixed;
   z-index: 2000;
 }
 
-#faqBtn,
-#aboutBtn {
-  margin-bottom: 30px;
-}
 
 
 /* MOBILE RESPONSIVE FIXES */
@@ -260,12 +256,5 @@ position: fixed;
   #musicToggle {
     padding: 5px 8px;
     font-size: 11px;
-  }
-}
-
-@media (max-width: 768px) {
-  #homeBox {
-    padding: 15px;
-    font-size: 14px;
   }
 }
