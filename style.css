@@ -13,8 +13,6 @@ body {
 
 
 
-
-
 h1, h2, h3 {
   margin: 20px 0;
 }
@@ -235,7 +233,7 @@ position: fixed;
 
 #faqBtn,
 #aboutBtn {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 
@@ -271,6 +269,3 @@ position: fixed;
     font-size: 14px;
   }
 }
-
-
-
