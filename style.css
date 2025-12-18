@@ -7,6 +7,10 @@ body {
   background: radial-gradient(circle at top, #106dd8, #0f0f1a);
   color: #ffffff;
 }
+body {
+  font-size: clamp(14px, 2.5vw, 18px);
+}
+
 
 
 h1, h2, h3 {
@@ -72,6 +76,10 @@ button:active {
 button:hover {
   background-color: #0056b3;
 }
+button {
+  touch-action: manipulation;
+}
+
 
 textarea {
   font-size: 16px;
@@ -218,4 +226,37 @@ position: fixed;
   width: 80%;
   max-width: 500px;
   z-index: 2000;
+}
+
+/* MOBILE RESPONSIVE FIXES */
+@media (max-width: 768px) {
+
+  #musicControls {
+    gap: 6px;
+    right: 2vw;
+    bottom: 2vh;
+    transform: scale(0.9);
+  }
+
+  #volumeControl {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+
+  #volBar {
+    width: 60px;
+    height: 6px;
+  }
+
+  #musicToggle {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  #homeBox {
+    padding: 15px;
+    font-size: 14px;
+  }
 }
