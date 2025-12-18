@@ -283,9 +283,6 @@ html, body {
   touch-action: manipulation;
 }
 
-textarea,
-button,
-p {
-  font-size: 16px;
-}
+
+
 
