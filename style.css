@@ -231,30 +231,10 @@ position: fixed;
   z-index: 2000;
 }
 
-
-
-/* MOBILE RESPONSIVE FIXES */
-@media (max-width: 768px) {
-
-  #musicControls {
-    gap: 6px;
-    right: 2vw;
-    bottom: 2vh;
-    transform: scale(0.9);
-  }
-
-  #volumeControl {
-    padding: 4px 6px;
-    font-size: 10px;
-  }
-
-  #volBar {
-    width: 60px;
-    height: 6px;
-  }
-
-  #musicToggle {
-    padding: 5px 8px;
-    font-size: 11px;
-  }
+#faqBtn,
+#aboutBtn {
+  margin-bottom: 25px;
 }
+
+
+
