@@ -313,18 +313,7 @@ backBtn.addEventListener("click", () => {
   loadQuestion();
 });
 
-const reflectionBox = document.getElementById("reflectionBox");
 
-if (reflectionBox) {
-  reflectionBox.addEventListener("focus", () => {
-    setTimeout(() => {
-      reflectionBox.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-    }, 300);
-  });
-}
 
 
 // ======================
@@ -370,3 +359,4 @@ document.querySelectorAll("button").forEach(button => {
     playClickSound();
   });
 });
+
