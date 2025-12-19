@@ -29,8 +29,9 @@
 
 <h1>PathFinder EDU</h1>
 <h1>Interactive Career Pathfinder</h1>
-<p style="font-size: 14px; color: #fcfcfc; margin-top: -10px;">
-  Developed as part of a research study at the Imus Institute of Science and Technology
+<p style="font-size: 14px; color: #fcfcfc; margin-top: 20px;">
+  Developed as part of a research study at the </p>
+<p style="font-size: 14px; color: #fcfcfc; margin-top: -10px;"></p>  Imus Institute of Science and Technology
 </p>
 
 <!-- TOP RIGHT MENU -->
@@ -47,28 +48,23 @@
 <img src="PathFinder EDU LOGO.png" alt="PathFinder EDU Logo" class="app-logo">
   <h2>Welcome!</h2>
   <p>
-    Interactive Career Pathfinder is a web-based career guidance tool
-    designed to help senior high school students discover career paths
-    that match their interests and personality using the RIASEC model.
+    PathFinder EDU is an interactive, web-based career guidance application designed to help senior high school students explore career paths that align with their interests and personality. This tool uses the RIASEC career model to provide meaningful insights and guidance for future academic and career decisions.
   </p>
 
   <h3>About the Web App</h3>
   <p>
-    This application presents a 30-item interactive questionnaire.
-    Based on your responses, the system identifies your top three
-    career personality types and suggests possible careers aligned
-    with different academic strands.
-  </p>
+    This application features a 30-item interactive questionnaire. Based on your responses, the system identifies your top three career personality types and suggests possible careers aligned with the STEM, ABM, and HUMSS academic strands.
 
 <h3>Instructions</h3>
-<p style="font-size: 14px; color: #000000; line-height: 1.6;">
-  When you are ready, click <strong>“Start Quiz.”</strong> Take your time and answer each question honestly and from your heart.
-  There are no right or wrong answers—this quiz is meant to help you understand yourself better.
-  <br><br>
-  If you change your mind, you can always go back or retake the quiz.
-  <br><br>
-  Once you receive your results, don’t forget to take a screenshot of the results page as evidence of completion.
-</p>
+
+<ol class="instructions-list">
+  <li>Click <strong>Start Quiz</strong> when you are ready.</li>
+  <li>Answer each question honestly—there are no right or wrong answers.</li>
+  <li>Take your time and reflect on each question.</li>
+  <li>You may go back or retake the quiz at any time.</li>
+  <li>After completing the quiz, review your results and take a screenshot as evidence of completion.</li>
+</ol>
+
 
 
 
@@ -78,37 +74,63 @@
 
 <!-- ABOUT BOX -->
 <div id="aboutBox" class="popupBox">
-  <h2>About This Project</h2>
+  <h2 style="color: #ffcc00">Research Title</h2>
+    <p>
+    EFFECT OF USING AN INTERACTIVE CAREER PATHFINDER WEB APP ON THE CAREER DECISION-MAKING SELF-EFFICACY OF SENIOR HIGH SCHOOL STUDENTS AT IIST: A QUASI EXPERIMENTAL STUDY
+  </p>
+  <h2 style="color: #ffcc00">About This Project</h2>
   <p>
-    This web application was developed by students as a required academic
+    This web application was developed by students as a part of a required academic
     research project of the Imus Institute of Science and Technology.
   </p>
   <p>
-    It aims to help students explore possible career paths using a RIASEC-based
-    assessment in an interactive and user-friendly way.
+   PathFinder EDU was created by students to provide an interactive and engaging way for senior high school students to explore career paths that match their interests and personalities.
   </p>
+  <h1 style="color: #ffcc00"> Created by: </h1>
+  </p> Reimjel Andrei Senas </p>
+  </p> Ken Andrei Panopio </p>
+  </p> Art Ryan Javier</p>
+
   <button onclick="closePopups()">Close</button>
 </div>
 
 <!-- FAQ BOX -->
 <div id="faqBox" class="popupBox">
-  <h2>Frequently Asked Questions</h2>
+  <h3>Frequently Asked Questions</h3>
 
-  <p><strong>Is this a test?</strong><br>
-  No. This is a self-assessment to help you reflect on your interests.</p>
-
-  <p><strong>Can I retake the quiz?</strong><br>
-  Yes! You may retake it anytime.</p>
-
-  <p><strong>Should I answer honestly?</strong><br>
-  Yes. Answer from the heart for the best results.</p>
-
-  <p><strong>Do I need proof?</strong><br>
-  Please take a screenshot of your results if required.</p>
-
-  <button onclick="closePopups()">Close</button>
+<div class="faq-item">
+  <button class="faq-question">Is this a test?</button>
+  <div class="faq-answer">
+    No. This is a self-assessment tool designed to help you reflect on your interests.
+  </div>
 </div>
 
+<div class="faq-item">
+  <button class="faq-question">Can I retake the quiz?</button>
+  <div class="faq-answer">
+    Yes. You may retake the quiz anytime.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Should I answer honestly?</button>
+  <div class="faq-answer">
+    Yes. Answering honestly will give you the most accurate results.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Do I need proof of completion?</button>
+  <div class="faq-answer">
+    Yes! Please take a screenshot of your results once for the Post-Test Survey.
+  </div>
+</div>
+<button onclick="closePopups()" style="margin-top: 20px;">
+  Close
+</button>
+
+
+</div> <!-- END FAQ BOX -->
 
 <!-- QUIZ PAGE -->
 <div id="quizBox" style="display: none;">
@@ -152,7 +174,7 @@
 
 <script src="script.js"></script>
 
-<footer style="background: #f0f4f8; padding: 20px 0; margin-top: 50px; font-size: 13px; color: #555; text-align: center;">
+<footer style="background: radial-gradient(circle at top, #106dd8, #0f0f1a); padding: 20px 0; margin-top: 50px; font-size: 13px; color: #ffffff; text-align: center;">
  <img src="IIST LOGO.png" alt="Project Logo" class="logo">
 
   <p style="font-size: 12px; margin-top: 30px;">
@@ -160,7 +182,7 @@ This web application was developed by students as part of an academic research r
 at the Imus Institute of Science and Technology.<br>
 For educational and research purposes only.
 
-<p style="font-size: 11px;">
+<p style="font-size: 8px;">
 Background music: "Retro Game Arcade" by moodmode, used under a free license.
 </p>
 
