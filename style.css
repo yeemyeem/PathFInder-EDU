@@ -10,7 +10,7 @@ body {
 
 
 h1, h2, h3 {
-  margin: 20px 0;
+  margin: 50px 0;
 }
 h1 {
   font-family: 'Press Start 2P', cursive;
@@ -26,7 +26,7 @@ p {
 
 
 
-#homeBox, #quizBox, #resultsBox {
+ #quizBox, #resultsBox {
   max-width: 900px;
   margin: 60px auto;
   padding: 50px 40px;
@@ -48,7 +48,6 @@ p {
 button {
   font-family: 'Press Start 2P', cursive;
   font-size: 14px;
-
   padding: 14px 20px;
   margin: 10px;
 
@@ -57,21 +56,23 @@ button {
 
   border: 3px solid #000;
   border-radius: 4px;
-
   cursor: pointer;
 
   box-shadow: 4px 4px 0 #000;
+
+  transition: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-button:active {
+/* REAL PRESSED STATE */
+button.pressed {
+  background: #0056b3;
   box-shadow: 2px 2px 0 #000;
   transform: translate(2px, 2px);
 }
 
 
-button:hover {
-  background-color: #0056b3;
-}
+
 
 textarea {
   font-size: 16px;
@@ -106,8 +107,8 @@ footer {
 }
 
 #homeBox {
-  max-width: 900px;
-  margin: 60px auto;
+  max-width: 650px;
+  margin: 50px auto;
   padding: 45px 40px;
 
   background: #f4f4f4;
@@ -224,4 +225,20 @@ button {
 }
 html, body {
   touch-action: manipulation;
+}
+
+@media (max-width: 600px) {
+  #musicToggleBtn {
+    padding: 20px 20px;
+    font-size: 10px;
+  }
+
+  #musicControls {
+    bottom: 100px;
+    right: 10px;
+  }
+}
+
+button:focus {
+  outline: none;
 }
