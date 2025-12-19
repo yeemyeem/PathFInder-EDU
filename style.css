@@ -4,10 +4,20 @@ body {
   padding: 0;
   text-align: center;
 
-  background: radial-gradient(circle at top, #106dd8, #0f0f1a);
+  background:
+    linear-gradient(
+      rgba(15, 15, 26, 0.75),
+      rgba(15, 15, 26, 0.75)
+    ),
+    url("8-bit-graphics-pixels-scene-with-city-night.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   color: #ffffff;
 }
-
 
 h1, h2, h3 {
   margin: 50px 0;
@@ -17,10 +27,20 @@ h1 {
   font-size: 22px;
   margin-bottom: 20px;
 }
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: 10px;
+}
+
 
 p {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
   line-height: 1.6;
 }
 
@@ -92,7 +112,7 @@ div#resultsList div {
 }
 
 footer {
-  background: #f0f4f8;
+  background: #07396b;
   padding: 15px 0;
   text-align: center;
   font-size: 13px;
@@ -201,10 +221,9 @@ position: fixed;
   font-family: 'Press Start 2P', cursive;
   font-size: 20px;
   margin-top: 4px;
-  color: #000000;
+  color: #ffffff;
   opacity: 100;
 }
-
 
 .popupBox {
   display: none;
@@ -212,14 +231,19 @@ position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   background: #111;
   color: #fff;
+
   border: 3px solid #fff;
   padding: 25px;
-  width: 80%;
+
+  width: 85%;
   max-width: 500px;
-  z-index: 2000;
+
+  z-index: 3000; /* VERY important */
 }
+
 button {
   touch-action: manipulation;
 }
@@ -241,4 +265,64 @@ html, body {
 
 button:focus {
   outline: none;
+}
+
+.instructions-list {
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 20px auto 30px;
+  max-width: 500px;
+  padding-left: 20px;
+  color: #000;
+}
+
+.instructions-list li {
+  margin-bottom: 12px;
+}
+.faq-item {
+  margin: 12px auto;
+  max-width: 550px;
+  text-align: left;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: #ffcc00;
+  border: 3px solid #000;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.faq-answer {
+  display: none;
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  border-top: none;
+  padding: 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.popupBox {
+  display: none;
+}
+
+#homeBox,
+#quizBox,
+#resultsBox {
+  position: relative;
+  z-index: 1;
+}
+
+
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
 }
