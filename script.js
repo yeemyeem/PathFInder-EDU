@@ -147,11 +147,11 @@ volUpBtn.addEventListener("click", () => {
 });
 
 function playClickSound() {
-  clickSound.currentTime = 0; // allow rapid clicks
-  clickSound.play();
+  clickSound.currentTime = 0;
   clickSound.volume = 0.4;
-
+  clickSound.play().catch(() => {});
 }
+
 
 
 // ======================
@@ -188,7 +188,7 @@ function loadQuestion() {
   progressText.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
 
   // Update progress bar
-  const progressPercent = ((currentQuestionIndex) / questions.length) * 100;
+  const progressPercent = ((currentQuestionIndex + 1) / questions.length) * 100;
   document.getElementById("progressBar").style.width = progressPercent + "%";
 
   backBtn.disabled = currentQuestionIndex === 0;
@@ -314,6 +314,7 @@ backBtn.addEventListener("click", () => {
 });
 
 
+
 // ======================
 // START QUIZ
 // ======================
@@ -353,7 +354,19 @@ function closePopups() {
 }
 
 document.querySelectorAll("button").forEach(button => {
-  button.addEventListener("click", () => {
+
+  // Press down
+  button.addEventListener("pointerdown", () => {
+    button.classList.add("pressed");
     playClickSound();
   });
+
+  // Release
+  const release = () => {
+    button.classList.remove("pressed");
+  };
+
+  button.addEventListener("pointerup", release);
+  button.addEventListener("pointerleave", release);
+  button.addEventListener("pointercancel", release);
 });
