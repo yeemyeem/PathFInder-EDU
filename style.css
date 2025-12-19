@@ -8,6 +8,10 @@ body {
   color: #ffffff;
 }
 
+html, body {
+  touch-action: manipulation;
+  overscroll-behavior: none;
+}
 
 h1, h2, h3 {
   margin: 20px 0;
