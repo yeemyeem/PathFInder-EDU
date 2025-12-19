@@ -219,3 +219,9 @@ position: fixed;
   max-width: 500px;
   z-index: 2000;
 }
+button {
+  touch-action: manipulation;
+}
+html, body {
+  touch-action: manipulation;
+}
