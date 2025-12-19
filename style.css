@@ -257,3 +257,8 @@ p {
     width: 100%;
   }
 }
+
+html, body {
+  touch-action: manipulation;
+}
+
