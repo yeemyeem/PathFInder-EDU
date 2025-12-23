@@ -1,49 +1,51 @@
+
 // ======================
 // RIASEC QUESTIONS
 // ======================
 const questions = [
-  // Realistic (R)
-  { text: "Do you enjoy hands-on activities, such as fixing, building, or assembling things?", type: "R" },
-  { text: "Do you like learning how tools, machines, or equipment work, even if you don’t use them often?", type: "R" },
+  // REALISTIC (R)
+  { text: "Do you enjoy using tools, machines, or equipment to complete tasks?", type: "R" },
+  { text: "Do you like building, assembling, or repairing physical objects?", type: "R" },
+  { text: "Do you enjoy outdoor or physically active work environments?", type: "R" },
+  { text: "Do you prefer learning by doing rather than reading or listening?", type: "R" },
   { text: "Do you enjoy working with nature, animals, plants, or the environment?", type: "R" },
-  { text: "Do you prefer doing practical tasks rather than just reading or talking about them?", type: "R" },
-  { text: "Do you enjoy activities that involve movement, physical effort, or outdoor work?", type: "R" },
 
-  // Investigative (I)
-  { text: "Do you enjoy solving problems that make you think deeply?", type: "I" },
-  { text: "Do you like asking questions about how or why things happen?", type: "I" },
-  { text: "Do you enjoy learning new information, especially about science, technology, or ideas?", type: "I" },
-  { text: "Do you like figuring out patterns, causes, or solutions?", type: "I" },
-  { text: "Do you enjoy thinking carefully before making decisions?", type: "I" },
+  // INVESTIGATIVE (I)
+  { text: "Do you like solving puzzles or complex problems that require logical thinking?", type: "I" },
+  { text: "Do you like exploring scientific ideas or conducting experiments?", type: "I" },
+  { text: "Do you enjoy learning how systems, technologies, or processes work?", type: "I" },
+  { text: "Do you like analyzing information before making decisions?", type: "I" },
+  { text: "Do you enjoy researching topics to discover new knowledge?", type: "I" },
 
-  // Artistic (A)
-  { text: "Do you enjoy expressing yourself creatively, such as through drawing, writing, music, or design?", type: "A" },
-  { text: "Do you like coming up with original ideas?", type: "A" },
-  { text: "Do you enjoy activities where there is no single 'correct' answer?", type: "A" },
-  { text: "Do you like using imagination or creativity when doing tasks?", type: "A" },
-  { text: "Do you enjoy creating something that reflects your personality or emotions?", type: "A" },
+  // ARTISTIC (A)
+  { text: "Do you enjoy creating original artwork, designs, or visual content?", type: "A" },
+  { text: "Do you like expressing ideas through writing, music, or performance?", type: "A" },
+  { text: "Do you enjoy activities that allow freedom and imagination?", type: "A" },
+  { text: "Do you prefer open-ended tasks over structured routines?", type: "A" },
+  { text: "Do you enjoy experimenting with new creative ideas or styles?", type: "A" },
 
-  // Social (S)
-  { text: "Do you enjoy helping or supporting other people?", type: "S" },
-  { text: "Do you like explaining things or sharing what you know?", type: "S" },
-  { text: "Do you enjoy working with people rather than alone?", type: "S" },
-  { text: "Do you like listening to others and understanding their feelings or needs?", type: "S" },
-  { text: "Do you feel satisfied when your actions positively affect others?", type: "S" },
+  // SOCIAL (S)
+  { text: "Do you enjoy helping others solve personal or academic problems?", type: "S" },
+  { text: "Do you like teaching, mentoring, or explaining concepts to people?", type: "S" },
+  { text: "Do you enjoy working in teams that focus on helping others?", type: "S" },
+  { text: "Do you feel fulfilled when supporting people’s emotional or social needs?", type: "S" },
+  { text: "Do you enjoy activities that involve cooperation and communication?", type: "S" },
 
-  // Enterprising (E)
-  { text: "Do you enjoy taking initiative or making decisions in group activities?", type: "E" },
-  { text: "Do you like sharing ideas and encouraging others to support them?", type: "E" },
-  { text: "Do you enjoy setting goals and working toward success?", type: "E" },
-  { text: "Do you like planning projects, events, or activities?", type: "E" },
-  { text: "Do you enjoy roles where you influence, organize, or motivate others?", type: "E" },
+  // ENTERPRISING (E)
+  { text: "Do you enjoy leading groups or organizing activities?", type: "E" },
+  { text: "Do you feel confident persuading others to support your ideas?", type: "E" },
+  { text: "Do you enjoy setting goals and motivating yourself to achieve them?", type: "E" },
+  { text: "Do you like making decisions that influence outcomes or people?", type: "E" },
+  { text: "Do you enjoy taking initiative in competitive or business-related tasks?", type: "E" },
 
-  // Conventional (C)
-  { text: "Do you enjoy organizing information, tasks, or schedules?", type: "C" },
-  { text: "Do you prefer clear instructions and step-by-step tasks?", type: "C" },
-  { text: "Do you like working carefully and accurately?", type: "C" },
-  { text: "Do you enjoy working with numbers, data, or structured information?", type: "C" },
-  { text: "Do you feel satisfied when things are neat, organized, and properly recorded?", type: "C" }
+  // CONVENTIONAL (C)
+  { text: "Do you enjoy organizing information, schedules, or materials?", type: "C" },
+  { text: "Do you prefer tasks with clear rules, steps, or instructions?", type: "C" },
+  { text: "Do you enjoy working with numbers, data, or detailed records?", type: "C" },
+  { text: "Do you like tasks that require accuracy, consistency, and precision?", type: "C" },
+  { text: "Do you feel satisfied when systems and records are well-maintained?", type: "C" }
 ];
+
 questions.sort(() => Math.random() - 0.5);
 
 // ======================
@@ -187,12 +189,23 @@ function loadQuestion() {
   questionText.textContent = currentQuestion.text;
   progressText.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
 
-  // Update progress bar
-  const progressPercent = ((currentQuestionIndex + 1) / questions.length) * 100;
-  document.getElementById("progressBar").style.width = progressPercent + "%";
+  updateProgress(); 
 
   backBtn.disabled = currentQuestionIndex === 0;
 }
+
+// Update progress bar
+function updateProgress() {
+  const progressPercent =
+    (currentQuestionIndex / questions.length) * 100;
+
+  const bar = document.getElementById("progressBar");
+  const icon = document.getElementById("progressIcon");
+
+  bar.style.width = progressPercent + "%";
+  icon.style.left = `calc(${progressPercent}% - 16px)`;
+}
+
 
 
 
@@ -242,6 +255,9 @@ const careerSuggestions = {
 function showResults() {
   document.getElementById("quizBox").style.display = "none";
   document.getElementById("resultsBox").style.display = "block";
+  document.getElementById("progressBar").style.width = "100%";
+document.getElementById("progressIcon").style.left = "calc(100% - 16px)";
+
 
   const resultsList = document.getElementById("resultsList");
   resultsList.innerHTML = "";
@@ -378,5 +394,3 @@ document.querySelectorAll(".faq-question").forEach(btn => {
       answer.style.display === "block" ? "none" : "block";
   });
 });
-
-
