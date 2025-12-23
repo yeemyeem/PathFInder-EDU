@@ -415,16 +415,15 @@ button:focus {
   justify-content: center;
 
   margin: 0 auto 16px;
-  margin-bottom: -50px;
+  margin-bottom: -40px;
 }
 
 #questionImage {
-  max-width: 250%;
-  max-height: 250%;
+  max-width: 200%;
+  max-height: 200%;
   transform: translateY(-4px);
 
   object-fit: contain;
   filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
   transition: opacity 0.25s ease;
 }
-
