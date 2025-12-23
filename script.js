@@ -168,6 +168,7 @@ const questions = [
 
 ];
 
+questions.sort(() => Math.random() - 0.5);
 
 
 // ======================
@@ -527,3 +528,4 @@ document.querySelectorAll(".faq-question").forEach(btn => {
       answer.style.display === "block" ? "none" : "block";
   });
 });
+
