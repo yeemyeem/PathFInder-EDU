@@ -99,7 +99,7 @@ const questions = [
   { text: "Do you enjoy working in teams that focus on helping others?",
      type: "S",
      image: "Quiz Images/social-3.png",
-     scale: 2.1,
+     scale: 4,
      },
 
   { text: "Do you feel fulfilled when supporting people’s emotional or social needs?",
@@ -168,7 +168,6 @@ const questions = [
 
 ];
 
-questions.sort(() => Math.random() - 0.5);
 
 
 // ======================
