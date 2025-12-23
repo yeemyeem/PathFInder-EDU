@@ -4,49 +4,172 @@
 // ======================
 const questions = [
   // REALISTIC (R)
-  { text: "Do you enjoy using tools, machines, or equipment to complete tasks?", type: "R" },
-  { text: "Do you like building, assembling, or repairing physical objects?", type: "R" },
-  { text: "Do you enjoy outdoor or physically active work environments?", type: "R" },
-  { text: "Do you prefer learning by doing rather than reading or listening?", type: "R" },
-  { text: "Do you enjoy working with nature, animals, plants, or the environment?", type: "R" },
+    {
+    text: "Do you enjoy using tools, machines, or equipment to complete tasks?",
+    type: "R",
+    image: "Quiz Images/realistic-1.png",
+  },
+
+  { text: "Do you like building, assembling, or repairing physical objects?", 
+    type: "R",
+    image: "Quiz Images/realistic-2.png"
+  },
+
+  { text: "Do you enjoy outdoor or physically active work environments?", 
+    type: "R",
+    image: "Quiz Images/realistic-3.png"
+  },
+
+  { text: "Do you prefer learning by doing rather than reading or listening?", 
+    type: "R",
+    image: "Quiz Images/realistic-4.png"
+   },
+
+  { text: "Do you enjoy working with nature, animals, plants, or the environment?",
+     type: "R", 
+     image: "Quiz Images/realistic-5.png"
+    },
 
   // INVESTIGATIVE (I)
-  { text: "Do you like solving puzzles or complex problems that require logical thinking?", type: "I" },
-  { text: "Do you like exploring scientific ideas or conducting experiments?", type: "I" },
-  { text: "Do you enjoy learning how systems, technologies, or processes work?", type: "I" },
-  { text: "Do you like analyzing information before making decisions?", type: "I" },
-  { text: "Do you enjoy researching topics to discover new knowledge?", type: "I" },
+  { text: "Do you like solving puzzles or complex problems that require logical thinking?",
+     type: "I", 
+     image: "Quiz Images/investigative-1.png",
+     scale: 2,
+     },
+
+  { text: "Do you like exploring scientific ideas or conducting experiments?",
+     type: "I",
+     image: "Quiz Images/investigative-2.png"
+     },
+
+  { text: "Do you enjoy learning how systems, technologies, or processes work?",
+     type: "I", 
+     image: "Quiz Images/investigative-3.png"
+     },
+
+  { text: "Do you like analyzing information before making decisions?",
+     type: "I",
+     image: "Quiz Images/investigative-4.png"
+     },
+
+  { text: "Do you enjoy researching topics to discover new knowledge?",
+     type: "I",
+     image: "Quiz Images/investigative-5.png"
+    },
+
 
   // ARTISTIC (A)
-  { text: "Do you enjoy creating original artwork, designs, or visual content?", type: "A" },
-  { text: "Do you like expressing ideas through writing, music, or performance?", type: "A" },
-  { text: "Do you enjoy activities that allow freedom and imagination?", type: "A" },
-  { text: "Do you prefer open-ended tasks over structured routines?", type: "A" },
-  { text: "Do you enjoy experimenting with new creative ideas or styles?", type: "A" },
+  { text: "Do you enjoy creating original artwork, designs, or visual content?",
+     type: "A",
+     image: "Quiz Images/artistic-1.png"
+     },
+
+  { text: "Do you like expressing ideas through writing, music, or performance?",
+     type: "A",
+     image: "Quiz Images/artistic-2.png"
+     },
+
+  { text: "Do you enjoy activities that allow freedom and imagination?", 
+    type: "A",
+    image: "Quiz Images/artistic-3.png"
+   },
+
+  { text: "Do you prefer open-ended tasks over structured routines?",
+     type: "A",
+     image: "Quiz Images/artistic-4.png"
+    },
+
+  { text: "Do you enjoy experimenting with new creative ideas or styles?",
+     type: "A",
+     image: "Quiz Images/artistic-5.png"
+     },
+
 
   // SOCIAL (S)
-  { text: "Do you enjoy helping others solve personal or academic problems?", type: "S" },
-  { text: "Do you like teaching, mentoring, or explaining concepts to people?", type: "S" },
-  { text: "Do you enjoy working in teams that focus on helping others?", type: "S" },
-  { text: "Do you feel fulfilled when supporting people’s emotional or social needs?", type: "S" },
-  { text: "Do you enjoy activities that involve cooperation and communication?", type: "S" },
+  { text: "Do you enjoy helping others solve personal or academic problems?",
+     type: "S",
+     image: "Quiz Images/social-1.png"
+     },
+
+  { text: "Do you like teaching, mentoring, or explaining concepts to people?",
+     type: "S",
+     image: "Quiz Images/social-2.png"
+     },
+
+  { text: "Do you enjoy working in teams that focus on helping others?",
+     type: "S",
+     image: "Quiz Images/social-3.png",
+     scale: 2.1,
+     },
+
+  { text: "Do you feel fulfilled when supporting people’s emotional or social needs?",
+     type: "S",
+     image: "Quiz Images/social-4.png"
+     },
+
+  { text: "Do you enjoy activities that involve cooperation and communication?",
+     type: "S",
+     image: "Quiz Images/social-5.png"
+     },
+
 
   // ENTERPRISING (E)
-  { text: "Do you enjoy leading groups or organizing activities?", type: "E" },
-  { text: "Do you feel confident persuading others to support your ideas?", type: "E" },
-  { text: "Do you enjoy setting goals and motivating yourself to achieve them?", type: "E" },
-  { text: "Do you like making decisions that influence outcomes or people?", type: "E" },
-  { text: "Do you enjoy taking initiative in competitive or business-related tasks?", type: "E" },
+  { text: "Do you enjoy leading groups or organizing activities?", 
+    type: "E",
+    image: "Quiz Images/E1.png"
+   },
+
+  { text: "Do you feel confident persuading others to support your ideas?",
+     type: "E", 
+     image: "Quiz Images/E2.png"
+     },
+
+  { text: "Do you enjoy setting goals and motivating yourself to achieve them?",
+     type: "E",
+     image: "Quiz Images/E3.png"
+    },
+
+  { text: "Do you like making decisions that influence outcomes or people?", 
+    type: "E",
+    image: "Quiz Images/E4.png"
+    },
+
+  { text: "Do you enjoy taking initiative in competitive or business-related tasks?",
+     type: "E",
+     image: "Quiz Images/E5.png"
+     },
+
 
   // CONVENTIONAL (C)
-  { text: "Do you enjoy organizing information, schedules, or materials?", type: "C" },
-  { text: "Do you prefer tasks with clear rules, steps, or instructions?", type: "C" },
-  { text: "Do you enjoy working with numbers, data, or detailed records?", type: "C" },
-  { text: "Do you like tasks that require accuracy, consistency, and precision?", type: "C" },
-  { text: "Do you feel satisfied when systems and records are well-maintained?", type: "C" }
+  { text: "Do you enjoy organizing information, schedules, or materials?", 
+    type: "C",
+    image: "Quiz Images/C1.png"
+   },
+
+  { text: "Do you prefer tasks with clear rules, steps, or instructions?", 
+    type: "C", 
+    image: "Quiz Images/C2.png"
+   },
+
+  { text: "Do you enjoy working with numbers, data, or detailed records?",
+     type: "C",
+     image: "Quiz Images/C3.png"
+     },
+
+  { text: "Do you like tasks that require accuracy, consistency, and precision?",
+     type: "C",
+     image: "Quiz Images/C4.png"
+     },
+
+  { text: "Do you feel satisfied when systems and records are well-maintained?",
+     type: "C",
+     image: "Quiz Images/C5.png"
+     },
+
 ];
 
 questions.sort(() => Math.random() - 0.5);
+
 
 // ======================
 // QUIZ STATE
@@ -186,13 +309,24 @@ document.addEventListener("click", startMusic, { once: true });
 // ======================
 function loadQuestion() {
   const currentQuestion = questions[currentQuestionIndex];
+
   questionText.textContent = currentQuestion.text;
   progressText.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
 
-  updateProgress(); 
+  const img = document.getElementById("questionImage");
 
+  // Fade effect (Akinator feel)
+  img.style.opacity = 0;
+
+  setTimeout(() => {
+    img.src = currentQuestion.image;
+    img.style.opacity = 1;
+  }, 120);
+
+  updateProgress();
   backBtn.disabled = currentQuestionIndex === 0;
 }
+
 
 // Update progress bar
 function updateProgress() {
