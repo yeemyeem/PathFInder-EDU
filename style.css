@@ -419,11 +419,12 @@ button:focus {
 }
 
 #questionImage {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 250%;
+  max-height: 250%;
   transform: translateY(-4px);
 
   object-fit: contain;
   filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
   transition: opacity 0.25s ease;
 }
+
