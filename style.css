@@ -56,11 +56,10 @@ p {
 
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 
-  background: url('samplebg.jpeg') no-repeat center center;
-  background-size: cover;
+
   padding: 50px 30px;
   border-radius: 15px;
-  color: #fff; /* Makes text readable on image */
+  color: #000000; /* Makes text readable on image */
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 
 }
@@ -325,4 +324,66 @@ button:focus {
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
   z-index: 2000;
+}
+
+
+.start-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+#startQuizBtn {
+  display: block;
+  margin: 0 auto;
+}
+
+.start-side-img {
+  position: absolute;
+  left: -88px;        /* move image beside button */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 95px;
+}
+
+
+#progressIcon {
+  animation: bob 0.6s infinite alternate;
+}
+
+@keyframes bob {
+  from { transform: translateY(0); }
+  to { transform: translateY(-3px); }
+}
+
+#progressBarContainer {
+  width: 80%;
+  height: 14px;
+  background: #222;
+  border: 3px solid #000;
+  margin: 20px auto 35px;
+  position: relative;
+  overflow: visible;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: #ffcc00;
+  transition: width 0.3s ease;
+}
+
+#progressIcon {
+  position: absolute;
+  top: -16px;
+  left: 0;
+  width: 65px;
+  image-rendering: pixelated;
+  transition: left 0.3s ease;
+  pointer-events: none;
+}
+
+
+#quizBox,
+#resultsBox {
+  display: none;
 }
