@@ -66,9 +66,12 @@
 </ol>
 
 
-
-
+  <div class="start-wrapper">
+  <img src="Start IMAGE.png" class="start-side-img" alt="">
   <button id="startQuizBtn">Start Quiz</button>
+</div>
+
+
 
 </div>
 
@@ -134,10 +137,16 @@
 
 <!-- QUIZ PAGE -->
 <div id="quizBox" style="display: none;">
-  <p id="progressText"></p>
-  <div id="progressBarContainer" style="width: 80%; background: #eee; margin: 0 auto 20px; border-radius: 10px;">
-  <div id="progressBar" style="width: 0%; height: 15px; background: #007BFF; border-radius: 10px;"></div>
+
+<div id="progressText"></div>
+
+<div id="progressBarContainer">
+  <div id="progressBar"></div>
+  <img src="PROGRESS BAR ICON.png" id="progressIcon">
 </div>
+
+
+
 
   <h2 id="questionText"></h2>
 
@@ -146,9 +155,10 @@
     <button id="yesBtn">Yes</button>
     <button id="noBtn">No</button>
     <button id="homeBtn">Home</button>
-
   </div>
+
 </div>
+
 
 <!-- RESULTS PAGE -->
 <div id="resultsBox" style="display: none;">
