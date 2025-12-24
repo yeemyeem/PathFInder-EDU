@@ -427,6 +427,41 @@ document.getElementById("progressIcon").style.left = "calc(100% - 16px)";
 });
 
 }
+const maxScore = Math.max(...Object.values(scores));
+
+document.querySelectorAll("#riasecChart .bar").forEach(bar => {
+  const type = bar.classList[1]; // R, I, A, etc.
+  const value = scores[type];
+
+  const heightPercent = (value / maxScore) * 100 || 5;
+  bar.style.height = heightPercent + "%";
+  bar.textContent = `${type}\n${value}`;
+});
+
+function populateReflectionChart() {
+  const MAX_SCORE = 5; // max possible per type
+
+  ["R", "I", "A", "S", "E", "C"].forEach(type => {
+    const bar = document.querySelector(`#riasecChartReflection .bar.${type}`);
+    const scoreLabel = document.getElementById(`score-${type}`);
+
+    if (!bar || !scoreLabel) return;
+
+    const value = scores[type];
+
+    // Non-linear scaling (exaggerates higher values)
+    const heightPercent = ((value / MAX_SCORE) ** 1.3) * 100;
+
+    bar.style.height = heightPercent + "%";
+    scoreLabel.textContent = value;
+  });
+}
+
+
+
+
+
+
 
 
 // ======================
@@ -477,10 +512,19 @@ document.getElementById("homeBtn").addEventListener("click", () => {
   homeBox.style.display = "block"; // show home page
 });
 
+const restartFromReflectionBtn = document.getElementById("restartFromReflectionBtn");
 
-document.getElementById("restartBtn").addEventListener("click", () => {
-  resetQuiz();
-});
+if (restartFromReflectionBtn) {
+  restartFromReflectionBtn.addEventListener("click", () => {
+    resetQuiz();
+
+    document.getElementById("reflectionPage").style.display = "none";
+    document.getElementById("homeBox").style.display = "block";
+
+    window.scrollTo(0, 0);
+  });
+}
+
 
 const aboutBtn = document.getElementById("aboutBtn");
 const faqBtn = document.getElementById("faqBtn");
@@ -520,26 +564,28 @@ function closePopups() {
 }
 
 function resetQuiz() {
-  // Reset state
+  // Reset quiz state
   currentQuestionIndex = 0;
   answers.length = 0;
 
-  // Reset scores
   for (let key in scores) {
     scores[key] = 0;
   }
 
-  // Reset UI
-  document.getElementById("resultsBox").style.display = "none";
-  document.getElementById("quizBox").style.display = "block";
+  // 🔥 HIDE ALL OTHER PAGES
   document.getElementById("homeBox").style.display = "none";
+  document.getElementById("resultsBox").style.display = "none";
+  document.getElementById("reflectionPage").style.display = "none";
 
-  // Reset progress bar
+  // SHOW QUIZ ONLY
+  document.getElementById("quizBox").style.display = "block";
+
+  // Reset progress
   document.getElementById("progressBar").style.width = "0%";
   document.getElementById("progressIcon").style.left = "0";
 
-  // Reload first question
   loadQuestion();
+  window.scrollTo(0, 0);
 }
 
 
@@ -591,3 +637,22 @@ if (reflectionBox) {
   });
 }
 
+document.getElementById("goToReflectionBtn").addEventListener("click", () => {
+  document.getElementById("resultsBox").style.display = "none";
+  document.getElementById("reflectionPage").style.display = "block";
+
+  populateReflectionChart(); // ✅ CALL IT HERE
+
+  window.scrollTo(0, 0);
+});
+
+
+document.getElementById("backToResultsBtn").addEventListener("click", () => {
+  document.getElementById("reflectionPage").style.display = "none";
+  document.getElementById("resultsBox").style.display = "block";
+});
+
+// Restart quiz from Reflection page
+document.getElementById("restartFromReflectionBtn").addEventListener("click", () => {
+  resetQuiz();
+});
