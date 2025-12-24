@@ -577,3 +577,17 @@ function openRiasec() {
 function closeRiasec() {
   document.getElementById("riasecModal").style.display = "none";
 }
+
+const reflectionBox = document.getElementById("reflectionBox");
+
+if (reflectionBox) {
+  reflectionBox.addEventListener("focus", () => {
+    setTimeout(() => {
+      reflectionBox.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }, 300); // wait for keyboard to open
+  });
+}
+
