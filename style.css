@@ -428,3 +428,14 @@ button:focus {
   transition: opacity 1s ease;
 }
 
+/* RIASEC color coding */
+.riasec-R { color: #4CAF50; }   /* Green */
+.riasec-I { color: #2196F3; }   /* Blue */
+.riasec-A { color: #E91E63; }   /* Pink */
+.riasec-S { color: #9C27B0; }   /* Purple */
+.riasec-E { color: #FF9800; }   /* Orange */
+.riasec-C { color: #FFEB3B; }   /* Yellow */
+
+.riasec-label {
+  font-weight: bold;
+}
