@@ -479,7 +479,7 @@ document.getElementById("homeBtn").addEventListener("click", () => {
 
 
 document.getElementById("restartBtn").addEventListener("click", () => {
-  location.reload();
+  resetQuiz();
 });
 
 const aboutBtn = document.getElementById("aboutBtn");
@@ -517,6 +517,29 @@ function closePopups() {
   aboutBox.style.display = "none";
   faqBox.style.display = "none";
   riasecBox.style.display = "none";
+}
+
+function resetQuiz() {
+  // Reset state
+  currentQuestionIndex = 0;
+  answers.length = 0;
+
+  // Reset scores
+  for (let key in scores) {
+    scores[key] = 0;
+  }
+
+  // Reset UI
+  document.getElementById("resultsBox").style.display = "none";
+  document.getElementById("quizBox").style.display = "block";
+  document.getElementById("homeBox").style.display = "none";
+
+  // Reset progress bar
+  document.getElementById("progressBar").style.width = "0%";
+  document.getElementById("progressIcon").style.left = "0";
+
+  // Reload first question
+  loadQuestion();
 }
 
 
