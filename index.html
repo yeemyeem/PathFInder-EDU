@@ -214,19 +214,79 @@
   <h2>Your Top 3 Career Personality Types</h2>
   <div id="resultsList"></div>
 
-  <h3>Reflection</h3>
-  <p>
-    Which suggested career interests you most, and why?
-    <br>
-    <em>Take a screenshot of this page and upload it as proof.</em>
-  </p>
+<button id="goToReflectionBtn" style="margin-top: 30px;">
+  Proceed to Reflection
+</button>
 
-  <textarea id="reflectionBox" rows="5" style="width: 80%;"></textarea>
+</div>
 
+<!-- REFLECTION PAGE -->
+<div id="reflectionPage" style="display:none; background:#fff; color:#000; padding:40px;">  
+
+  <h1 style="margin-top: -30px;">Reflection Page</h1>
+
+<h3>Your RIASEC Score Distribution</h3>
+
+<div id="riasecChartReflection">
+  <div class="bar-wrap">
+    <div class="bar R"></div>
+    <span class="bar-score" id="score-R"></span>
+    <span class="bar-label">R</span>
+  </div>
+
+  <div class="bar-wrap">
+    <div class="bar I"></div>
+    <span class="bar-score" id="score-I"></span>
+    <span class="bar-label">I</span>
+  </div>
+
+  <div class="bar-wrap">
+    <div class="bar A"></div>
+    <span class="bar-score" id="score-A"></span>
+    <span class="bar-label">A</span>
+  </div>
+
+  <div class="bar-wrap">
+    <div class="bar S"></div>
+    <span class="bar-score" id="score-S"></span>
+    <span class="bar-label">S</span>
+  </div>
+
+  <div class="bar-wrap">
+    <div class="bar E"></div>
+    <span class="bar-score" id="score-E"></span>
+    <span class="bar-label">E</span>
+  </div>
+
+  <div class="bar-wrap">
+    <div class="bar C"></div>
+    <span class="bar-score" id="score-C"></span>
+    <span class="bar-label">C</span>
+  </div>
+</div>
+
+
+<h2>Your Career Reflection</h2>
+
+<p style="font-size: 12px; max-width: 650px; margin: 0 auto 20px;">
+  Which suggested career interests you most, and why? Please Take a screenshot of this page and upload it as proof of completion. Thankyou!
+</p>
+
+  <textarea
+    id="reflectionBox"
+    rows="6"
+    style="width:90%; font-size:16px;">
+  </textarea>
 
   <br><br>
-  <button id="restartBtn">Restart Quiz</button>
+
+<button id="restartFromReflectionBtn">Restart Quiz</button>
+  <button id="backToResultsBtn">Back to Results</button>
+
 </div>
+
+
+
 
 <!-- Button Click Sound -->
 <audio id="clickSound" src="mixkit-quick-lock-sound-2854.wav" preload="auto"></audio>
