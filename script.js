@@ -167,7 +167,6 @@ const questions = [
      },
 
 ];
-
 questions.sort(() => Math.random() - 0.5);
 
 
@@ -485,23 +484,42 @@ document.getElementById("restartBtn").addEventListener("click", () => {
 
 const aboutBtn = document.getElementById("aboutBtn");
 const faqBtn = document.getElementById("faqBtn");
+const riasecBtn = document.getElementById("riasecBtn");
+
 const aboutBox = document.getElementById("aboutBox");
 const faqBox = document.getElementById("faqBox");
+const riasecBox = document.getElementById("riasecBox");
 
-aboutBtn.addEventListener("click", () => {
-  aboutBox.style.display = "block";
-  faqBox.style.display = "none";
-});
+if (aboutBtn) {
+  aboutBtn.addEventListener("click", () => {
+    aboutBox.style.display = "block";
+    faqBox.style.display = "none";
+    riasecBox.style.display = "none";
+  });
+}
 
-faqBtn.addEventListener("click", () => {
-  faqBox.style.display = "block";
-  aboutBox.style.display = "none";
-});
+if (faqBtn) {
+  faqBtn.addEventListener("click", () => {
+    faqBox.style.display = "block";
+    aboutBox.style.display = "none";
+    riasecBox.style.display = "none";
+  });
+}
 
+if (riasecBtn) {
+  riasecBtn.addEventListener("click", () => {
+    riasecBox.style.display = "block";
+    aboutBox.style.display = "none";
+    faqBox.style.display = "none";
+  });
+}
 function closePopups() {
   aboutBox.style.display = "none";
   faqBox.style.display = "none";
+  riasecBox.style.display = "none";
 }
+
+
 
 document.querySelectorAll("button").forEach(button => {
 
@@ -529,3 +547,10 @@ document.querySelectorAll(".faq-question").forEach(btn => {
   });
 });
 
+function openRiasec() {
+  document.getElementById("riasecModal").style.display = "block";
+}
+
+function closeRiasec() {
+  document.getElementById("riasecModal").style.display = "none";
+}
