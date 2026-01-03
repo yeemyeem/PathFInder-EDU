@@ -27,7 +27,7 @@
 
 
 
-<h1>PathFinder EDU</h1>
+<h1 class="rgb-full-glow">PathFinder EDU</h1>
 <h1>Interactive Career Pathfinder</h1>
 <p style="font-size: 14px; color: #fcfcfc; margin-top: 20px;">
   Developed as part of a research study at the </p>
@@ -47,7 +47,7 @@
 <div id="homeBox">
 
 <img src="PathFinder EDU LOGO.png" alt="PathFinder EDU Logo" class="app-logo">
-  <h2>Welcome!</h2>
+  <h2 style="margin-top: 20px;">Welcome!</h2>
   <p>
     PathFinder EDU is an interactive, web-based career guidance application designed to help senior high school students explore career paths that align with their interests and personality. This tool uses the RIASEC career model to provide meaningful insights and guidance for future academic and career decisions.
   </p>
@@ -211,14 +211,21 @@
 
 <!-- RESULTS PAGE -->
 <div id="resultsBox" style="display: none;">
-  <h2>Your Top 3 Career Personality Types</h2>
+  <h2 style="margin-top: -40px;margin-bottom: 10px;color: #fff;">Your Top 3 Career Personality Types</h2>
+
+
+<ul class="career-list"></ul>
+
+
+  <!-- THIS is where JS injects cards -->
   <div id="resultsList"></div>
+  
 
-<button id="goToReflectionBtn" style="margin-top: 30px;">
-  Proceed to Reflection
-</button>
-
+  <button id="goToReflectionBtn" style="margin-top: 30px;">
+    Proceed to Reflection
+  </button>
 </div>
+
 
 <!-- REFLECTION PAGE -->
 <div id="reflectionPage" style="display:none; background:#fff; color:#000; padding:40px;">  
