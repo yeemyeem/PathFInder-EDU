@@ -22,6 +22,32 @@ body {
 h1, h2, h3 {
   margin: 50px 0;
 }
+.rgb-full-glow {
+  font-size: 50px;
+  font-family: 'Press Start 2P', cursive;
+  color: #ffffff;
+
+  text-shadow:
+    0 0 6px rgb(0, 195, 255),
+    0 0 12px rgb(11, 14, 235),
+    0 0 20px rgb(102, 7, 226),
+    0 0 6px rgb(25, 0, 255),
+    0 0 12px cyan,
+    0 0 20px cyan,
+    0 0 6px rgb(255, 0, 221),
+    0 0 12px rgb(247, 0, 255),
+    0 0 20px rgb(255, 0, 170);
+}
+@keyframes glowPulse {
+  0%   { filter: brightness(1); }
+  50%  { filter: brightness(1.4); }
+  100% { filter: brightness(1); }
+}
+
+.rgb-full-glow {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
 h1 {
   font-family: 'Press Start 2P', cursive;
   font-size: 22px;
@@ -64,23 +90,7 @@ p {
 
 }
 
-#resultsBox {
-  max-width: 750px;
-  margin: 60px auto;
-  padding: 50px 40px;
 
-background: #f4f4f4;
-  color: #111;
-
-  border: 4px solid #000;
-  border-radius: 6px;
-
-  box-shadow:
-    0 0 0 4px #ffcc00,
-    0 0 0 8px #000;
-
-
-}
 
 button {
   font-family: 'Press Start 2P', cursive;
@@ -507,6 +517,88 @@ textarea {
   color: #000;
 }
 
+
+
+#resultsBox {
+  max-width: 750px;
+  margin: 60px auto;
+  padding: 50px 40px;
+
+background: #01304b;
+image-rendering: pixelated;
+  color: #111;
+
+  border: 4px solid #000;
+  border-radius: 6px;
+
+  box-shadow:
+    0 0 0 4px #ffcc00,
+    0 0 0 8px #000;
+
+
+}
+.riasec-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+   border: 3px solid #000;
+    margin: 20px auto 24px auto;
+  margin-bottom: 24px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* SMALL COLORED ACCENT STRIP */
+.riasec-card::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 9px;
+  height: calc(150% - 20px);
+  background: var(--riasec-color);
+  border-radius: 8px;
+}
+
+/* HEADER SHOULD BE NORMAL TEXT ONLY */
+.riasec-header {
+  position: relative;
+  min-height: 90px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* 👈 centers title */
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  background: none;
+}
+
+
+
+
+.riasec-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  margin-left: 15px;
+  color: #000000;
+}
+
+.riasec-card h4 {
+  margin: 14px 0 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+   margin-left: 15px;
+}
+
+.career-list {
+  padding-left: 18px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
 /* RIASEC colors */
 .bar.R { background: #4CAF50; }
 .bar.I { background: #2196F3; }
@@ -514,3 +606,144 @@ textarea {
 .bar.S { background: #9C27B0; }
 .bar.E { background: #FF9800; }
 .bar.C { background: #FFEB3B; }
+
+
+.realistic .riasec-header {
+  background: linear-gradient(135deg, #33be38, #1ffc2a);
+}
+
+.investigative .riasec-header {
+  background: linear-gradient(135deg, #2196F3, #64b5f6);
+}
+
+.artistic .riasec-header {
+  background: linear-gradient(135deg, #E91E63, #c71668);
+}
+
+.social .riasec-header {
+  background: linear-gradient(135deg, #9C27B0, #ba68c8);
+}
+
+.enterprising .riasec-header {
+  background: linear-gradient(135deg, #FF9800, #f1b760);
+}
+
+.conventional .riasec-header {
+  background: linear-gradient(135deg, #b4a30b, #ffe600);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.results-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.top-match {
+  transform: scale(1.03);
+  border: 3px solid #000;
+}
+.riasec-body p strong {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.career-list {
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+
+.riasec-header span {
+  margin-right: 8px;
+}
+
+.strand-selector {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.strand-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #ff0800;
+  background: #ff0000;
+  color: #000000;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+/* ACTIVE = GREEN */
+.strand-btn.active {
+  background: #28a745;
+  border-color: #28a745;
+  color: #fff;
+}
+
+.strand-btn:hover {
+  opacity: 0.9;
+}
+
+.riasec-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.riasec-card.active .riasec-body {
+  max-height: 1200px; /* large enough for content */
+}
+
+/* Make header feel clickable */
+.riasec-header {
+  cursor: pointer;
+  user-select: none;
+}
+
+.riasec-header:hover {
+  opacity: 0.85;
+}
+
+.riasec-mascot {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 115x;
+  height: 115px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+
+.riasec-title {
+  font-size: 1.35rem;
+  z-index: 1;
+}
+
+@keyframes softBounce {
+  0%   { transform: translateY(-50%) scale(1); }
+  40%  { transform: translateY(-58%) scale(1.05); }
+  100% { transform: translateY(-50%) scale(1); }
+}
+
+.riasec-card.active .riasec-mascot {
+  animation: softBounce 0.6s ease;
+}
+
+.riasec-header {
+  cursor: pointer;
+}
+
+.riasec-header.pressed {
+  transform: translateY(2px);
+}
