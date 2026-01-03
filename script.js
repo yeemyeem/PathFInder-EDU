@@ -167,8 +167,7 @@ const questions = [
      },
 
 ];
-
-
+questions.sort(() => Math.random() - 0.5);
 
 // ======================
 // QUIZ STATE
@@ -827,6 +826,7 @@ document.getElementById("backToResultsBtn").addEventListener("click", () => {
 document.getElementById("restartFromReflectionBtn").addEventListener("click", () => {
   resetQuiz();
 });
+
 
 
 
