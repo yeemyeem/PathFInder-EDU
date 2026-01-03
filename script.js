@@ -167,7 +167,7 @@ const questions = [
      },
 
 ];
-questions.sort(() => Math.random() - 0.5);
+
 
 
 // ======================
@@ -351,6 +351,17 @@ function nextQuestion() {
   loadQuestion();
 }
 
+const riasecDisplay = {
+  R: { label: "Realistic", class: "realistic", icon: "🛠️" },
+  I: { label: "Investigative", class: "investigative", icon: "🔬" },
+  A: { label: "Artistic", class: "artistic", icon: "🎨" },
+  S: { label: "Social", class: "social", icon: "🤝" },
+  E: { label: "Enterprising", class: "enterprising", icon: "💡" },
+  C: { label: "Conventional", class: "conventional", icon: "📊" }
+};
+
+
+
 const careerSuggestions = {
   R: {
     STEM: ["Engineering", "Architecture", "Agricultural Technology"],
@@ -384,59 +395,219 @@ const careerSuggestions = {
   }
 };
 
+const riasecCareers = {
+  R: {
+    STEM: ["Mechanical Technician", "Electrical Technician", "Civil Engineering Assistant"],
+    ABM: ["Operations Supervisor", "Logistics Coordinator"],
+    HUMSS: ["Community Infrastructure Aide", "Environmental Field Worker"]
+  },
+  I: {
+    STEM: ["Software Developer", "Data Analyst", "Research Scientist"],
+    ABM: ["Business Analyst", "Market Research Analyst"],
+    HUMSS: ["Policy Research Assistant", "Psychology Research Assistant"]
+  },
+  A: {
+    STEM: ["UI/UX Designer", "Game Designer"],
+    ABM: ["Creative Marketing Associate", "Advertising Assistant"],
+    HUMSS: ["Writer", "Visual Artist"]
+  },
+  S: {
+    STEM: ["Nurse", "Public Health Assistant"],
+    ABM: ["Human Resource Assistant"],
+    HUMSS: ["Teacher", "Social Worker"]
+  },
+  E: {
+    STEM: ["Technology Startup Founder"],
+    ABM: ["Entrepreneur", "Sales Executive"],
+    HUMSS: ["Public Relations Officer"]
+  },
+  C: {
+    STEM: ["Information Systems Assistant"],
+    ABM: ["Accounting Assistant", "Finance Clerk"],
+    HUMSS: ["Records Management Aide"]
+  }
+};
+
 
 function showResults() {
+  // Hide quiz, show results
   document.getElementById("quizBox").style.display = "none";
   document.getElementById("resultsBox").style.display = "block";
-  document.getElementById("progressBar").style.width = "100%";
-document.getElementById("progressIcon").style.left = "calc(100% - 16px)";
 
+  // Fill progress bar
+  document.getElementById("progressBar").style.width = "100%";
+  document.getElementById("progressIcon").style.left = "calc(100% - 16px)";
 
   const resultsList = document.getElementById("resultsList");
   resultsList.innerHTML = "";
+  if (!resultsList) {
+  console.error("resultsList not found in HTML");
+  return;
+}
 
+
+  // Get top 3 scores
   const sortedResults = Object.entries(scores)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 3);
 
-  const descriptions = {
-    R: "Realistic – You enjoy hands-on, practical activities.",
-    I: "Investigative – You enjoy thinking, analyzing, and problem-solving.",
-    A: "Artistic – You enjoy creativity, self-expression, and originality.",
-    S: "Social – You enjoy helping, teaching, and supporting others.",
-    E: "Enterprising – You enjoy leading, persuading, and taking initiative.",
-    C: "Conventional – You enjoy organizing, managing data, and structured tasks."
-  };
+sortedResults.forEach(([type, score], index) => {
+  const display = riasecDisplay[type];
+  const careers = careerSuggestions[type];
 
-  sortedResults.forEach(([type, score]) => {
-  const div = document.createElement("div");
-  div.style.border = "1px solid #ccc";
-  div.style.padding = "15px";
-  div.style.marginBottom = "20px";
+  const card = document.createElement("div");
+  if (index === 0) {
+  card.classList.add("active"); // top result open by default
+}
 
-  div.innerHTML = `
-    <h3>${descriptions[type]}</h3>
-    <p><strong>Score:</strong> ${score}</p>
+  card.className = `riasec-card ${display.class} ${index === 0 ? "top-match" : ""}`;
 
-    <p><strong>STEM:</strong> ${careerSuggestions[type].STEM.join(", ")}</p>
-    <p><strong>ABM:</strong> ${careerSuggestions[type].ABM.join(", ")}</p>
-    <p><strong>HUMSS:</strong> ${careerSuggestions[type].HUMSS.join(", ")}</p>
-  `;
+  card.innerHTML = `
+<div class="riasec-header">
+<div class="riasec-mascot-wrapper">
+  <img 
+    src="Result Images/${type}.png"
+    alt="${display.label} mascot"
+    class="riasec-mascot"
+  />
+</div>
+  <span class="riasec-title">
+    ${display.label} (${type})
+  </span>
+</div>
 
-  resultsList.appendChild(div);
+  <div class="riasec-body">
+    <p class="riasec-desc">
+      You Matched: ${score}/5 in this category
+    </p>
+
+    <p class="riasec-desc">
+      <strong>${categoryDescriptions[type]}</strong>
+    </p>
+
+    <p class="riasec-desc">
+      <strong>Key Skills & Competencies:</strong>
+      ${categorySkills[type].join(", ")}
+    </p>
+
+    <div class="strand-selector">
+      <button class="strand-btn active" data-strand="STEM">STEM</button>
+      <button class="strand-btn" data-strand="ABM">ABM</button>
+      <button class="strand-btn" data-strand="HUMSS">HUMSS</button>
+    </div>
+
+    <p class="riasec-desc">
+      <strong>College Programs:</strong>
+      <span class="college-programs"></span>
+    </p>
+
+    <h4>Possible Career Paths</h4>
+    <ul class="career-list"></ul>
+  </div>
+`;
+
+
+  resultsList.appendChild(card);
+  // Make header act like a button (sound + press)
+const header = card.querySelector(".riasec-header");
+
+header.addEventListener("pointerdown", () => {
+  header.classList.add("pressed");
+  playClickSound();
+});
+
+const releaseHeader = () => {
+  header.classList.remove("pressed");
+};
+
+header.addEventListener("pointerup", releaseHeader);
+header.addEventListener("pointerleave", releaseHeader);
+header.addEventListener("pointercancel", releaseHeader);
+
+
+// Open the first (top result) by default
+if (index === 0) {
+  card.classList.add("active");
+}
+
+
+header.addEventListener("click", () => {
+  const isOpen = card.classList.contains("active");
+
+  // Close all cards
+  document.querySelectorAll(".riasec-card").forEach(c => {
+    c.classList.remove("active");
+  });
+
+  // Toggle current card
+  if (!isOpen) {
+    card.classList.add("active");
+  }
+});
+
+
+  const buttons = card.querySelectorAll(".strand-btn");
+  const collegeSpan = card.querySelector(".college-programs");
+
+  // Update career list + college programs
+  function updateCard(strand) {
+    // Career paths
+    const list = card.querySelector(".career-list");
+    list.innerHTML = "";
+    riasecCareers[type][strand].forEach(career => {
+      const li = document.createElement("li");
+      li.textContent = career;
+      list.appendChild(li);
+    });
+
+    // College programs
+    collegeSpan.textContent = careers[strand].join(", ");
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      updateCard(btn.dataset.strand);
+    });
+  });
+
+  // Default = STEM
+  updateCard("STEM");
 });
 
 }
-const maxScore = Math.max(...Object.values(scores));
+const categoryDescriptions = {
+  R: "You enjoy practical, hands-on work and solving tangible problems.",
+  I: "You enjoy analyzing information, solving problems, and exploring ideas.",
+  A: "You enjoy creative expression, innovation, and imaginative tasks.",
+  S: "You enjoy helping, teaching, and collaborating with others.",
+  E: "You enjoy leading, persuading, and taking initiative.",
+  C: "You enjoy structure, organization, and detailed, methodical work."
+};
 
-document.querySelectorAll("#riasecChart .bar").forEach(bar => {
-  const type = bar.classList[1]; // R, I, A, etc.
-  const value = scores[type];
+const categorySkills = {
+  R: ["Problem-solving", "Technical skills", "Manual dexterity"],
+  I: ["Analytical thinking", "Research", "Critical reasoning"],
+  A: ["Creativity", "Artistic expression", "Innovation"],
+  S: ["Communication", "Empathy", "Collaboration"],
+  E: ["Leadership", "Decision-making", "Persuasion"],
+  C: ["Organization", "Attention to detail", "Data management"]
+};
 
-  const heightPercent = (value / maxScore) * 100 || 5;
-  bar.style.height = heightPercent + "%";
-  bar.textContent = `${type}\n${value}`;
-});
+
+function updateCareerList(card, type, strand) {
+  const list = card.querySelector(".career-list");
+  list.innerHTML = "";
+
+  riasecCareers[type][strand].forEach(career => {
+    const li = document.createElement("li");
+    li.textContent = career;
+    list.appendChild(li);
+  });
+}
+
+
 
 function populateReflectionChart() {
   const MAX_SCORE = 5; // max possible per type
@@ -656,3 +827,6 @@ document.getElementById("backToResultsBtn").addEventListener("click", () => {
 document.getElementById("restartFromReflectionBtn").addEventListener("click", () => {
   resetQuiz();
 });
+
+
+
