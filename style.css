@@ -588,10 +588,11 @@ image-rendering: pixelated;
 }
 
 .riasec-card h4 {
-  margin: 14px 0 6px;
-  font-size: 0.95rem;
-  font-weight: 600;
-   margin-left: 15px;
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .career-list {
@@ -696,12 +697,18 @@ image-rendering: pixelated;
 .riasec-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease;
+  transition: max-height 0.45s ease;
 }
 
 .riasec-card.active .riasec-body {
-  max-height: 1200px; /* large enough for content */
+  max-height: 9999px; /* effectively "auto" */
 }
+.riasec-card.active .riasec-body::after {
+  content: "";
+  display: block;
+  height: 12px;
+}
+
 
 /* Make header feel clickable */
 .riasec-header {
@@ -746,4 +753,38 @@ image-rendering: pixelated;
 
 .riasec-header.pressed {
   transform: translateY(2px);
+}
+
+.riasec-section {
+  padding: 14px 18px;
+  margin: 16px 12px;
+  background: rgba(0, 0, 0, 0.03);
+  border-left: 4px solid #000;
+  border-radius: 6px;
+}
+.riasec-section ul {
+  padding-left: 18px;
+  margin: 8px 0 0;
+}
+
+.riasec-section li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+.riasec-score {
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin: 12px 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed #000;
+}
+.results-disclaimer {
+  margin-top: 40px;
+  padding: 16px 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #222;
+  background: rgba(8, 102, 226, 0.85);
+  border: 2px dashed #000;
+  border-radius: 6px;
 }
