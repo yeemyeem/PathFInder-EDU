@@ -363,67 +363,223 @@ const riasecDisplay = {
 
 const careerSuggestions = {
   R: {
-    STEM: ["Engineering", "Architecture", "Agricultural Technology"],
-    ABM: ["Operations Management", "Supply Chain Management"],
-    HUMSS: ["Environmental Planning", "Community Development"]
+    STEM: [
+      "Engineering",
+      "Architecture",
+      "Agricultural Technology",
+      "Industrial Technology",
+      "Environmental Engineering"
+    ],
+    ABM: [
+      "Operations Management",
+      "Supply Chain Management",
+      "Facilities Management"
+    ],
+    HUMSS: [
+      "Environmental Planning",
+      "Community Development",
+      "Disaster Risk Management"
+    ]
   },
+
   I: {
-    STEM: ["Medicine", "Information Technology", "Data Analytics"],
-    ABM: ["Business Analytics", "Market Research"],
-    HUMSS: ["Psychology", "Political Science"]
+    STEM: [
+      "Medicine",
+      "Information Technology",
+      "Data Analytics",
+      "Computer Science",
+      "Biotechnology"
+    ],
+    ABM: [
+      "Business Analytics",
+      "Market Research",
+      "Applied Economics"
+    ],
+    HUMSS: [
+      "Psychology",
+      "Political Science",
+      "Sociology"
+    ]
   },
+
   A: {
-    STEM: ["Multimedia Technology", "Game Design"],
-    ABM: ["Advertising", "Brand Management"],
-    HUMSS: ["Creative Writing", "Fine Arts", "Performing Arts"]
+    STEM: [
+      "Multimedia Technology",
+      "Game Design",
+      "Digital Animation"
+    ],
+    ABM: [
+      "Advertising",
+      "Brand Management",
+      "Creative Entrepreneurship"
+    ],
+    HUMSS: [
+      "Creative Writing",
+      "Fine Arts",
+      "Performing Arts",
+      "Media Studies"
+    ]
   },
+
   S: {
-    STEM: ["Nursing", "Public Health"],
-    ABM: ["Human Resource Management"],
-    HUMSS: ["Education", "Social Work", "Guidance Counseling"]
+    STEM: [
+      "Nursing",
+      "Public Health",
+      "Allied Health Sciences"
+    ],
+    ABM: [
+      "Human Resource Management",
+      "Organizational Development"
+    ],
+    HUMSS: [
+      "Education",
+      "Social Work",
+      "Guidance and Counseling"
+    ]
   },
+
   E: {
-    STEM: ["Technology Entrepreneurship"],
-    ABM: ["Marketing", "Entrepreneurship", "Sales Management"],
-    HUMSS: ["Public Relations", "Political Leadership"]
+    STEM: [
+      "Technology Entrepreneurship",
+      "Innovation Management"
+    ],
+    ABM: [
+      "Marketing",
+      "Entrepreneurship",
+      "Sales Management",
+      "Business Development"
+    ],
+    HUMSS: [
+      "Public Relations",
+      "Political Leadership",
+      "Communication Studies"
+    ]
   },
+
   C: {
-    STEM: ["Information Systems", "Data Management"],
-    ABM: ["Accounting", "Finance"],
-    HUMSS: ["Public Administration", "Records Management"]
+    STEM: [
+      "Information Systems",
+      "Data Management",
+      "Computerized Accounting"
+    ],
+    ABM: [
+      "Accounting",
+      "Finance",
+      "Management Accounting"
+    ],
+    HUMSS: [
+      "Public Administration",
+      "Records Management",
+      "Office Administration"
+    ]
   }
 };
 
+
 const riasecCareers = {
   R: {
-    STEM: ["Mechanical Technician", "Electrical Technician", "Civil Engineering Assistant"],
-    ABM: ["Operations Supervisor", "Logistics Coordinator"],
-    HUMSS: ["Community Infrastructure Aide", "Environmental Field Worker"]
+    STEM: [
+      "Mechanical Technician",
+      "Electrical Technician",
+      "Civil Engineering Assistant",
+      "Maintenance Technologist"
+    ],
+    ABM: [
+      "Operations Supervisor",
+      "Logistics Coordinator",
+      "Facilities Supervisor"
+    ],
+    HUMSS: [
+      "Community Infrastructure Aide",
+      "Environmental Field Worker",
+      "Project Site Assistant"
+    ]
   },
+
   I: {
-    STEM: ["Software Developer", "Data Analyst", "Research Scientist"],
-    ABM: ["Business Analyst", "Market Research Analyst"],
-    HUMSS: ["Policy Research Assistant", "Psychology Research Assistant"]
+    STEM: [
+      "Software Developer",
+      "Data Analyst",
+      "Research Scientist",
+      "Laboratory Analyst"
+    ],
+    ABM: [
+      "Business Analyst",
+      "Market Research Analyst",
+      "Planning Analyst"
+    ],
+    HUMSS: [
+      "Policy Research Assistant",
+      "Psychology Research Assistant",
+      "Program Evaluation Assistant"
+    ]
   },
+
   A: {
-    STEM: ["UI/UX Designer", "Game Designer"],
-    ABM: ["Creative Marketing Associate", "Advertising Assistant"],
-    HUMSS: ["Writer", "Visual Artist"]
+    STEM: [
+      "UI/UX Designer",
+      "Game Designer",
+      "Multimedia Artist"
+    ],
+    ABM: [
+      "Creative Marketing Associate",
+      "Advertising Assistant",
+      "Content Strategist"
+    ],
+    HUMSS: [
+      "Writer",
+      "Visual Artist",
+      "Media Production Assistant"
+    ]
   },
+
   S: {
-    STEM: ["Nurse", "Public Health Assistant"],
-    ABM: ["Human Resource Assistant"],
-    HUMSS: ["Teacher", "Social Worker"]
+    STEM: [
+      "Nurse",
+      "Public Health Assistant",
+      "Healthcare Support Specialist"
+    ],
+    ABM: [
+      "Human Resource Assistant",
+      "Training Coordinator"
+    ],
+    HUMSS: [
+      "Teacher",
+      "Social Worker",
+      "Student Services Assistant"
+    ]
   },
+
   E: {
-    STEM: ["Technology Startup Founder"],
-    ABM: ["Entrepreneur", "Sales Executive"],
-    HUMSS: ["Public Relations Officer"]
+    STEM: [
+      "Technology Startup Associate",
+      "Innovation Project Officer"
+    ],
+    ABM: [
+      "Entrepreneur",
+      "Sales Executive",
+      "Business Development Officer"
+    ],
+    HUMSS: [
+      "Public Relations Officer",
+      "Community Program Manager"
+    ]
   },
+
   C: {
-    STEM: ["Information Systems Assistant"],
-    ABM: ["Accounting Assistant", "Finance Clerk"],
-    HUMSS: ["Records Management Aide"]
+    STEM: [
+      "Information Systems Assistant",
+      "Database Support Staff"
+    ],
+    ABM: [
+      "Accounting Assistant",
+      "Finance Clerk",
+      "Bookkeeping Officer"
+    ],
+    HUMSS: [
+      "Records Management Aide",
+      "Administrative Officer"
+    ]
   }
 };
 
@@ -437,12 +593,15 @@ function showResults() {
   document.getElementById("progressBar").style.width = "100%";
   document.getElementById("progressIcon").style.left = "calc(100% - 16px)";
 
-  const resultsList = document.getElementById("resultsList");
-  resultsList.innerHTML = "";
-  if (!resultsList) {
+ const resultsList = document.getElementById("resultsList");
+
+if (!resultsList) {
   console.error("resultsList not found in HTML");
   return;
 }
+
+resultsList.innerHTML = "";
+
 
 
   // Get top 3 scores
@@ -457,53 +616,102 @@ sortedResults.forEach(([type, score], index) => {
   const card = document.createElement("div");
   if (index === 0) {
   card.classList.add("active"); // top result open by default
+  document.getElementById("resultsDisclaimer").textContent = resultDisclaimer;
+
 }
 
   card.className = `riasec-card ${display.class} ${index === 0 ? "top-match" : ""}`;
 
   card.innerHTML = `
-<div class="riasec-header">
-<div class="riasec-mascot-wrapper">
-  <img 
-    src="Result Images/${type}.png"
-    alt="${display.label} mascot"
-    class="riasec-mascot"
-  />
-</div>
-  <span class="riasec-title">
-    ${display.label} (${type})
-  </span>
-</div>
+  <div class="riasec-header">
+    <div class="riasec-mascot-wrapper">
+      <img 
+        src="Result Images/${type}.png"
+        alt="${display.label} mascot"
+        class="riasec-mascot"
+      />
+    </div>
+    <span class="riasec-title">
+      ${display.label} (${type})
+    </span>
+  </div>
 
   <div class="riasec-body">
-    <p class="riasec-desc">
-      You Matched: ${score}/5 in this category
+
+    <!-- SCORE -->
+    <p class="riasec-score">
+      You Matched: <strong>${score}/5</strong>
     </p>
 
-    <p class="riasec-desc">
-      <strong>${categoryDescriptions[type]}</strong>
-    </p>
+    <!-- PERSONALITY PROFILE -->
+    <section class="riasec-section">
+      <h4>Personality Profile</h4>
+      <p>${riasecProfiles[type].personality}</p>
+    </section>
 
-    <p class="riasec-desc">
-      <strong>Key Skills & Competencies:</strong>
-      ${categorySkills[type].join(", ")}
-    </p>
+    <!-- COMMON TRAITS -->
+    <section class="riasec-section">
+      <h4>Common Traits</h4>
+      <ul>
+        ${riasecProfiles[type].traits.map(t => `<li>${t}</li>`).join("")}
+      </ul>
+    </section>
 
+    <!-- SKILLS -->
+    <section class="riasec-section">
+      <h4>Skills & Competencies</h4>
+      <ul>
+        ${categorySkills[type].map(s => `<li>${s}</li>`).join("")}
+      </ul>
+    </section>
+
+    <!-- ACTIVITIES -->
+    <section class="riasec-section">
+      <h4>Preferred Activities</h4>
+      <ul>
+        ${riasecProfiles[type].activities.preferred.map(a => `<li>${a}</li>`).join("")}
+      </ul>
+
+      <h4>Activities Often Avoided</h4>
+      <ul>
+        ${riasecProfiles[type].activities.avoided.map(a => `<li>${a}</li>`).join("")}
+      </ul>
+    </section>
+
+    <!-- ENVIRONMENT -->
+    <section class="riasec-section">
+      <h4>Work Environment Fit</h4>
+      <p>${riasecProfiles[type].environment}</p>
+    </section>
+
+    <!-- STRANDS -->
     <div class="strand-selector">
       <button class="strand-btn active" data-strand="STEM">STEM</button>
       <button class="strand-btn" data-strand="ABM">ABM</button>
       <button class="strand-btn" data-strand="HUMSS">HUMSS</button>
     </div>
 
-    <p class="riasec-desc">
-      <strong>College Programs:</strong>
-      <span class="college-programs"></span>
-    </p>
+    <!-- CAREER FIELDS -->
+    <section class="riasec-section">
+      <h4>Career Fields Commonly Associated</h4>
+      <p class="college-programs"></p>
+    </section>
 
-    <h4>Possible Career Paths</h4>
-    <ul class="career-list"></ul>
+    <!-- OCCUPATIONS -->
+    <section class="riasec-section">
+      <h4>Examples of Occupations</h4>
+      <ul class="career-list"></ul>
+    </section>
+
+    <!-- SOURCE -->
+    <section class="riasec-section riasec-source">
+      <small><em>Source: ${riasecProfiles[type].source}</em></small>
+    </section>
+
   </div>
 `;
+
+const cardBody = card.querySelector(".riasec-body");
 
 
   resultsList.appendChild(card);
@@ -576,22 +784,230 @@ header.addEventListener("click", () => {
 });
 
 }
-const categoryDescriptions = {
-  R: "You enjoy practical, hands-on work and solving tangible problems.",
-  I: "You enjoy analyzing information, solving problems, and exploring ideas.",
-  A: "You enjoy creative expression, innovation, and imaginative tasks.",
-  S: "You enjoy helping, teaching, and collaborating with others.",
-  E: "You enjoy leading, persuading, and taking initiative.",
-  C: "You enjoy structure, organization, and detailed, methodical work."
-};
+
 
 const categorySkills = {
-  R: ["Problem-solving", "Technical skills", "Manual dexterity"],
-  I: ["Analytical thinking", "Research", "Critical reasoning"],
-  A: ["Creativity", "Artistic expression", "Innovation"],
-  S: ["Communication", "Empathy", "Collaboration"],
-  E: ["Leadership", "Decision-making", "Persuasion"],
-  C: ["Organization", "Attention to detail", "Data management"]
+  R: [
+    "Hands-on problem solving",
+    "Technical and mechanical skills",
+    "Equipment handling and maintenance",
+    "Spatial and physical coordination"
+  ],
+  I: [
+    "Analytical and critical thinking",
+    "Research and data interpretation",
+    "Logical reasoning",
+    "Independent problem solving"
+  ],
+  A: [
+    "Creative thinking and ideation",
+    "Artistic and design skills",
+    "Original expression",
+    "Visual or verbal creativity"
+  ],
+  S: [
+    "Interpersonal communication",
+    "Empathy and active listening",
+    "Team collaboration",
+    "Instruction and support skills"
+  ],
+  E: [
+    "Leadership and initiative",
+    "Decision-making under pressure",
+    "Persuasion and negotiation",
+    "Goal-oriented planning"
+  ],
+  C: [
+    "Organization and time management",
+    "Attention to detail",
+    "Data and record handling",
+    "Following systems and procedures"
+  ]
+};
+
+const riasecProfiles = {
+  R: {
+    personality: `
+Individuals with a Realistic personality type prefer hands-on, practical activities
+that involve working with tools, machines, objects, or animals. They value structure,
+clear outcomes, and tangible results, and often avoid highly social, educational,
+or therapeutic activities.
+`,
+    traits: [
+      "Practical and persistent",
+      "Honest and dependable",
+      "Prefers structured and tangible tasks"
+    ],
+    activities: {
+      preferred: [
+        "Using tools, machines, or equipment",
+        "Building, repairing, or maintaining physical objects",
+        "Performing structured, hands-on tasks"
+      ],
+      avoided: [
+        "Highly social or persuasive activities",
+        "Abstract or therapeutic tasks"
+      ]
+    },
+    environment: `
+Realistic environments emphasize technical competence, structured tasks,
+and tangible outcomes. These environments reward practical skills,
+traditional values, and mechanical ability.
+`,
+    source: "Holland (1997); Niles & Harris-Bowlsbey (2013)"
+  },
+
+  I: {
+    personality: `
+Individuals with an Investigative personality type prefer activities that involve
+observation, research, and systematic investigation of physical, biological,
+or cultural phenomena. They enjoy working with ideas and data and often avoid
+persuasive, repetitive, or highly social tasks.
+`,
+    traits: [
+      "Analytical and curious",
+      "Independent and cautious",
+      "Enjoys intellectual challenges"
+    ],
+    activities: {
+      preferred: [
+        "Researching and analyzing information",
+        "Solving complex problems",
+        "Working with data, theories, or experiments"
+      ],
+      avoided: [
+        "Sales-oriented or persuasive tasks",
+        "Highly routine or repetitive work"
+      ]
+    },
+    environment: `
+Investigative environments encourage scientific inquiry, analytical thinking,
+and independent problem-solving. These environments value knowledge,
+research competence, and intellectual achievement.
+`,
+    source: "Holland (1997); Niles & Harris-Bowlsbey (2013)"
+  },
+
+  A: {
+    personality: `
+Individuals with an Artistic personality type prefer ambiguous, flexible,
+and unsystematized activities that allow creative expression. They value
+originality, imagination, and independence and often avoid rigid or highly
+structured tasks.
+`,
+    traits: [
+      "Creative and expressive",
+      "Independent and intuitive",
+      "Values originality"
+    ],
+    activities: {
+      preferred: [
+        "Creating art, designs, or written works",
+        "Expressing ideas creatively",
+        "Working in flexible environments"
+      ],
+      avoided: [
+        "Highly structured or repetitive tasks",
+        "Strict procedural work"
+      ]
+    },
+    environment: `
+Artistic environments are flexible and unstructured, encouraging originality
+and creative expression. These environments reward innovation,
+individuality, and artistic achievement.
+`,
+    source: "Holland (1997); Niles & Harris-Bowlsbey (2013)"
+  },
+
+  S: {
+    personality: `
+Individuals with a Social personality type prefer activities that involve helping,
+teaching, guiding, or supporting others. They value cooperation, empathy,
+and meaningful social interaction and often avoid highly technical or mechanical tasks.
+`,
+    traits: [
+      "Helpful and understanding",
+      "Communicative and patient",
+      "People-oriented"
+    ],
+    activities: {
+      preferred: [
+        "Teaching or training others",
+        "Providing care or support",
+        "Collaborating in team-based settings"
+      ],
+      avoided: [
+        "Highly mechanical or technical tasks",
+        "Isolated or machine-focused work"
+      ]
+    },
+    environment: `
+Social environments emphasize cooperation, communication, and service.
+These environments reward empathy, interpersonal skills,
+and helping-oriented values.
+`,
+    source: "Holland (1997); Niles & Harris-Bowlsbey (2013)"
+  },
+
+  E: {
+    personality: `
+Individuals with an Enterprising personality type prefer activities that involve
+leading, persuading, or influencing others to achieve goals. They value initiative,
+achievement, and responsibility and often avoid highly analytical or routine tasks.
+`,
+    traits: [
+      "Confident and energetic",
+      "Goal-oriented",
+      "Comfortable with leadership roles"
+    ],
+    activities: {
+      preferred: [
+        "Leading teams or projects",
+        "Persuading or motivating others",
+        "Making decisions and taking initiative"
+      ],
+      avoided: [
+        "Highly theoretical or analytical work",
+        "Routine or repetitive tasks"
+      ]
+    },
+    environment: `
+Enterprising environments are dynamic and goal-driven, rewarding leadership,
+initiative, and achievement. These environments value influence,
+status, and organizational success.
+`,
+    source: "Holland (1997); Niles & Harris-Bowlsbey (2013)"
+  },
+
+  C: {
+    personality: `
+Individuals with a Conventional personality type prefer structured, orderly,
+and systematic activities involving data, records, or procedures. They value
+accuracy, efficiency, and clear rules and often avoid ambiguous or unstructured tasks.
+`,
+    traits: [
+      "Organized and detail-oriented",
+      "Efficient and reliable",
+      "Prefers clear procedures"
+    ],
+    activities: {
+      preferred: [
+        "Organizing records and data",
+        "Following established systems",
+        "Managing details accurately"
+      ],
+      avoided: [
+        "Ambiguous or unstructured work",
+        "Highly creative or exploratory tasks"
+      ]
+    },
+    environment: `
+Conventional environments emphasize order, accuracy, and efficiency.
+These environments reward reliability, conformity to procedures,
+and systematic work habits.
+`,
+    source: "Holland (1997); Niles & Harris-Bowlsbey (2013)"
+  }
 };
 
 
@@ -667,6 +1083,12 @@ backBtn.addEventListener("click", () => {
   loadQuestion();
 });
 
+const resultDisclaimer = `
+Career results are based on Holland’s RIASEC Theory of Vocational Personalities
+and Work Environments (Holland, 1997), with personality descriptions adapted
+from Niles & Harris-Bowlsbey (2013). Results are intended for career exploration,
+not as fixed predictions.
+`;
 
 
 // ======================
@@ -826,7 +1248,6 @@ document.getElementById("backToResultsBtn").addEventListener("click", () => {
 document.getElementById("restartFromReflectionBtn").addEventListener("click", () => {
   resetQuiz();
 });
-
 
 
 
