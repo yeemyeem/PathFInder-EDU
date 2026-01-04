@@ -541,7 +541,7 @@ image-rendering: pixelated;
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  background: white;
+  background: #ffcc00;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
    border: 3px solid #000;
     margin: 20px auto 24px auto;
@@ -758,7 +758,7 @@ image-rendering: pixelated;
 .riasec-section {
   padding: 14px 18px;
   margin: 16px 12px;
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(253, 251, 251, 0.87);
   border-left: 4px solid #000;
   border-radius: 6px;
 }
@@ -787,4 +787,24 @@ image-rendering: pixelated;
   background: rgba(8, 102, 226, 0.85);
   border: 2px dashed #000;
   border-radius: 6px;
+}
+
+/* Default career list */
+.career-list {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* STEM = multi-column grid */
+.career-list.stem-grid {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 6px 16px;
+}
+
+.career-list.stem-grid li::before {
+  content: "▸ ";
+  font-weight: bold;
 }
