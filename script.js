@@ -364,16 +364,16 @@ const riasecDisplay = {
 const careerSuggestions = {
   R: {
     STEM: [
-      "Engineering",
+      "Engineering & Industrial Technology",
       "Architecture",
-      "Agricultural Technology",
-      "Industrial Technology",
-      "Environmental Engineering"
+      "Skilled Trades & Technical Services",
+      "Agricultural & Environmental Technology",
+      "Construction & Infrastructure"
+      
     ],
     ABM: [
-      "Operations Management",
-      "Supply Chain Management",
-      "Facilities Management"
+      "Operations & Facilities Management",
+      "Logistics & Supply Chain Operations"
     ],
     HUMSS: [
       "Environmental Planning",
@@ -384,16 +384,14 @@ const careerSuggestions = {
 
   I: {
     STEM: [
-      "Medicine",
-      "Information Technology",
-      "Data Analytics",
-      "Computer Science",
-      "Biotechnology"
+     "Medical & Health Sciences",
+      "Natural & Physical Sciences",
+      "Engineering & Applied Sciences",
+      "Information & Data Sciences"
     ],
     ABM: [
-      "Business Analytics",
-      "Market Research",
-      "Applied Economics"
+     "Business Analytics & Market Research",
+      "Economic & Policy Analysis"
     ],
     HUMSS: [
       "Psychology",
@@ -423,54 +421,49 @@ const careerSuggestions = {
 
   S: {
     STEM: [
-      "Nursing",
-      "Public Health",
-      "Allied Health Sciences"
+      "Healthcare & Allied Health Services",
+      "Public Health & Wellness"
     ],
     ABM: [
-      "Human Resource Management",
-      "Organizational Development"
+      "Human Resource Development",
+      "Training & Organizational Support"
     ],
     HUMSS: [
-      "Education",
-      "Social Work",
-      "Guidance and Counseling"
+      "Education & Teaching",
+      "Counseling & Social Services",
+      "Community & Human Development"
     ]
   },
 
   E: {
     STEM: [
-      "Technology Entrepreneurship",
-      "Innovation Management"
+      "Technology Innovation & Startups",
+      "Applied Innovation Management"
     ],
     ABM: [
-      "Marketing",
-      "Entrepreneurship",
-      "Sales Management",
-      "Business Development"
+      "Entrepreneurship & Business Development",
+      "Sales, Marketing & Commercial Management",
+      "Hospitality & Service Management"
     ],
     HUMSS: [
-      "Public Relations",
-      "Political Leadership",
-      "Communication Studies"
+      "Law, Governance & Public Leadership",
+      "Media, Communication & Public Relations"
     ]
   },
 
   C: {
     STEM: [
-      "Information Systems",
-      "Data Management",
+      "Information Systems & Data Operations",
+      "Technical Information Management",
       "Computerized Accounting"
     ],
     ABM: [
-      "Accounting",
-      "Finance",
-      "Management Accounting"
+      "Accounting, Finance & Bookkeeping",
+      "Banking & Financial Services"
     ],
     HUMSS: [
-      "Public Administration",
-      "Records Management",
-      "Office Administration"
+      "Administrative & Records Management",
+       "Clerical & Office Support Services"
     ]
   }
 };
@@ -479,15 +472,21 @@ const careerSuggestions = {
 const riasecCareers = {
   R: {
     STEM: [
-      "Mechanical Technician",
-      "Electrical Technician",
-      "Civil Engineering Assistant",
-      "Maintenance Technologist"
+    "Mechanical Engineer",
+    "Civil Engineer",
+    "Architect",
+    "Police Officer",
+    "Fire FIghter",
+    "Carpenter",
+    "Farmer",
+    "Aircraft Mechanic",
+    "Pilot"
     ],
     ABM: [
       "Operations Supervisor",
       "Logistics Coordinator",
-      "Facilities Supervisor"
+      "Facilities Supervisor",
+      "Farm Operations Manager"
     ],
     HUMSS: [
       "Community Infrastructure Aide",
@@ -498,10 +497,19 @@ const riasecCareers = {
 
   I: {
     STEM: [
-      "Software Developer",
-      "Data Analyst",
-      "Research Scientist",
-      "Laboratory Analyst"
+   "Software Developer",
+    "Data Analyst",
+    "Research Scientist",
+    "Laboratory Analyst",
+    "Biologist",
+    "Chemist",
+    "Electrical Engineer",
+    "Mathematician",
+    "Medical Technician",
+    "Meteorologist",
+    "Pharmacist",
+    "Physician",
+    "Veterinarian"
     ],
     ABM: [
       "Business Analyst",
@@ -511,58 +519,85 @@ const riasecCareers = {
     HUMSS: [
       "Policy Research Assistant",
       "Psychology Research Assistant",
-      "Program Evaluation Assistant"
+      "Program Evaluation Assistant",
+      "Surveyor"
     ]
   },
 
-  A: {
-    STEM: [
-      "UI/UX Designer",
-      "Game Designer",
-      "Multimedia Artist"
-    ],
-    ABM: [
-      "Creative Marketing Associate",
-      "Advertising Assistant",
-      "Content Strategist"
-    ],
-    HUMSS: [
-      "Writer",
-      "Visual Artist",
-      "Media Production Assistant"
-    ]
-  },
+A: {
+  STEM: [
+    "UI/UX Designer",
+    "Game Designer",
+    "Multimedia Artist",
+    "Graphic Designer",
+    "Sound Designer"
+  ],
+  ABM: [
+    "Creative Marketing Associate",
+    "Advertising Assistant",
+    "Brand Designer"
+  ],
+  HUMSS: [
+    "Writer",
+    "Visual Artist",
+    "Actor",
+    "Art Teacher",
+    "Book Editor",
+    "Clothing Designer",
+    "Comedian",
+    "Composer",
+    "Dancer",
+    "Musician"
+  ]
+},
 
   S: {
     STEM: [
-      "Nurse",
-      "Public Health Assistant",
-      "Healthcare Support Specialist"
+     "Nurse",
+    "Public Health Assistant",
+    "Physical Therapist",
+    "Athletic Trainer",
+    "Dental Hygienist"
     ],
     ABM: [
       "Human Resource Assistant",
       "Training Coordinator"
     ],
     HUMSS: [
-      "Teacher",
-      "Social Worker",
-      "Student Services Assistant"
+   "Teacher",
+    "Social Worker",
+    "Counselor",
+    "Librarian",
+    "Parole Officer"
     ]
   },
 
   E: {
     STEM: [
       "Technology Startup Associate",
+      "Industrial Engineer",
       "Innovation Project Officer"
     ],
     ABM: [
-      "Entrepreneur",
-      "Sales Executive",
-      "Business Development Officer"
+    "Entrepreneur",
+    "Sales Executive",
+    "Business Development Officer",
+    "Auctioneer",
+    "Bank President",
+    "Hotel Manager",
+    "Real Estate Agent",
+    "Sales Manager",
+    "Salesperson",
+    "Travel Agent",
+    "Lawyer"
     ],
     HUMSS: [
-      "Public Relations Officer",
-      "Community Program Manager"
+    "Public Relations Officer",
+    "City Manager",
+    "Judge",
+    "Lawyer",
+    "TV Newscaster",
+    "School Principal"
     ]
   },
 
@@ -572,14 +607,23 @@ const riasecCareers = {
       "Database Support Staff"
     ],
     ABM: [
-      "Accounting Assistant",
-      "Finance Clerk",
-      "Bookkeeping Officer"
+    "Accounting Assistant",
+    "Finance Clerk",
+    "Bookkeeper",
+    "Secretary",
+    "Bank Teller"
     ],
     HUMSS: [
-      "Records Management Aide",
-      "Administrative Officer"
-    ]
+    "Records Management Aide",
+    "Administrative Officer",
+    "Court Clerk",
+    "Mail Carrier",
+    "Post Office Clerk",
+    "Secretary",
+    "Timekeeper",
+    "Title Examiner",
+    "Typist"
+  ]
   }
 };
 
@@ -757,19 +801,22 @@ header.addEventListener("click", () => {
   const collegeSpan = card.querySelector(".college-programs");
 
   // Update career list + college programs
-  function updateCard(strand) {
-    // Career paths
-    const list = card.querySelector(".career-list");
-    list.innerHTML = "";
-    riasecCareers[type][strand].forEach(career => {
-      const li = document.createElement("li");
-      li.textContent = career;
-      list.appendChild(li);
-    });
+function updateCard(strand) {
+  const list = card.querySelector(".career-list");
+  list.innerHTML = "";
 
-    // College programs
-    collegeSpan.textContent = careers[strand].join(", ");
-  }
+  // 🔑 toggle grid layout only for STEM
+  list.classList.toggle("stem-grid", strand === "STEM");
+
+  riasecCareers[type][strand].forEach(career => {
+    const li = document.createElement("li");
+    li.textContent = career;
+    list.appendChild(li);
+  });
+
+  collegeSpan.textContent = careers[strand].join(", ");
+}
+
 
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
