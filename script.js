@@ -372,6 +372,7 @@ const careerSuggestions = {
   R: {
     STEM: [
       "Engineering & Industrial Technology",
+      "Robotics/Computers",
       "Architecture",
       "Culinary",
       "Skilled Trades & Technical Services",
@@ -395,6 +396,7 @@ const careerSuggestions = {
      "Medical & Health Sciences",
       "Natural & Physical Sciences",
       "Engineering & Applied Sciences",
+      "Computer Science/Robotics",
       "Information & Data Sciences"
     ],
     ABM: [
@@ -482,6 +484,7 @@ const riasecCareers = {
     STEM: [
     "Mechanical Engineer",
     "Civil Engineer",
+    "Computer Engineer",
     "Architect",
     "Police Officer",
     "Fire FIghter",
