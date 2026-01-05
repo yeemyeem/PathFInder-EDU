@@ -167,7 +167,13 @@ const questions = [
      },
 
 ];
-questions.sort(() => Math.random() - 0.5);
+function shuffleQuestions() {
+  for (let i = questions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [questions[i], questions[j]] = [questions[j], questions[i]];
+  }
+}
+
 
 // ======================
 // QUIZ STATE
@@ -1159,10 +1165,12 @@ not as fixed predictions.
 // START QUIZ
 // ======================
 startQuizBtn.addEventListener("click", () => {
+  shuffleQuestions();       // 🔥 NEW
   homeBox.style.display = "none";
   quizBox.style.display = "block";
   loadQuestion();
 });
+
 
 
 const restartBtn = document.getElementById("restartBtn");
@@ -1243,7 +1251,6 @@ function closePopups() {
 }
 
 function resetQuiz() {
-  // Reset quiz state
   currentQuestionIndex = 0;
   answers.length = 0;
 
@@ -1251,13 +1258,20 @@ function resetQuiz() {
     scores[key] = 0;
   }
 
-  // 🔥 HIDE ALL OTHER PAGES
+  shuffleQuestions();       // 🔥 NEW
+
   document.getElementById("homeBox").style.display = "none";
   document.getElementById("resultsBox").style.display = "none";
   document.getElementById("reflectionPage").style.display = "none";
-
-  // SHOW QUIZ ONLY
   document.getElementById("quizBox").style.display = "block";
+
+  document.getElementById("progressBar").style.width = "0%";
+  document.getElementById("progressIcon").style.left = "0";
+
+  loadQuestion();
+  window.scrollTo(0, 0);
+}
+
 
   // Reset progress
   document.getElementById("progressBar").style.width = "0%";
@@ -1265,7 +1279,7 @@ function resetQuiz() {
 
   loadQuestion();
   window.scrollTo(0, 0);
-}
+
 
 
 
