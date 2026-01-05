@@ -13,7 +13,7 @@
 </audio>
 
 <div id="musicControls">
-  <button id="musicToggleBtn">🔊 Music: ON</button>
+  <button id="musicToggleBtn">🔊 <br> Music: <br>ON</button>
 
 <div id="volumeControl">
   <button id="volDownBtn">−</button>
@@ -54,7 +54,9 @@
 
   <h3>About the Web App</h3>
   <p>
-    This application features a 30-item interactive questionnaire. Based on your responses, the system identifies your top three career personality types and suggests possible careers aligned with the STEM, ABM, and HUMSS academic strands.
+    This application features a 30-item interactive questionnaire based on the RIASEC model.
+It identifies the user’s top three career interest types and displays related career fields aligned with the STEM, ABM, and HUMSS academic strands for exploration purposes.
+No personal data or responses are collected or stored by the system.</p>
 
 <h3>Instructions</h3>
 
@@ -65,6 +67,14 @@
   <li>You may go back or retake the quiz at any time.</li>
   <li>After completing the quiz, review your results and take a screenshot as evidence of completion.</li>
 </ol>
+<div class="home-disclaimer">
+  <strong>Disclaimer:</strong><br>
+  PathFinder EDU is a career exploration and self-assessment tool based on the RIASEC model.
+  Results are intended to help students reflect on their interests & preferences only and do not guarantee career success, accuracy, or suitability.
+  This tool does <strong>NOT</strong> measure intelligence, skills, or abilities and should <strong>NOT</strong> be used as the sole basis for career decisions.
+
+
+</div>
 
 
   <div class="start-wrapper">
@@ -154,12 +164,20 @@
 
   <h2 id="questionText"></h2>
 
-  <div>
-    <button id="backBtn">Back</button>
-    <button id="yesBtn">Yes</button>
-    <button id="noBtn">No</button>
-    <button id="homeBtn">Home</button>
-  </div>
+ <div>
+  <button id="backBtn">Back</button>
+  <button id="yesBtn">Yes</button>
+  <button id="neutralBtn">Neutral</button>
+  <button id="noBtn">No</button>
+<button id="homeBtn">HOME</button>
+
+</button>
+
+
+</button>
+
+</div>
+
 
 </div>
 
@@ -289,8 +307,18 @@
 
   <br><br>
 
-<button id="restartFromReflectionBtn">Restart Quiz</button>
+<div class="reflection-actions">
   <button id="backToResultsBtn">Back to Results</button>
+  <button id="restartBtn">Restart Quiz</button>
+<button id="homeBtnReflection">HOME</button>
+</button>
+
+
+</button>
+
+</div>
+
+
 
 </div>
 
@@ -321,5 +349,6 @@ Background music: "Retro Game Arcade" by moodmode, used under a free license.
 
 </body>
 </html>
+
 
   
