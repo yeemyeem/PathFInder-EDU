@@ -117,6 +117,14 @@ button.pressed {
   box-shadow: 2px 2px 0 #000;
   transform: translate(2px, 2px);
 }
+#neutralBtn {
+  background: #ffcc00;
+  color: #000;
+}
+
+#neutralBtn.pressed {
+  background: #0056b3;
+}
 
 
 
@@ -181,11 +189,14 @@ footer {
   right: 15px;
   top: auto;
   z-index: 1000;
+  width: 105px;
+  height: 90px;
 
   font-family: 'Press Start 2P', cursive;
-  font-size: 11px;
+  font-size: 12px;
+  content: center;
 
-  padding: 40px 40px;
+  padding: 5px 5px 5px 5px;
 
   background: #00ffcc;
   color: #000;
@@ -230,25 +241,45 @@ position: fixed;
 
 #volumeBar {
   display: flex;
-  gap: 3px;
-  margin: 0 6px;
-}
-.volumeBlock {
-  width: 8px;
-  height: 14px;
+  flex-direction: column-reverse; /* bottom = low, top = high */
+  align-items: center;
+  gap: 4px;
+
+  width: 20px;
+  height: 120px;
+
   border: 2px solid #000;
-  background: #ccc;
+  padding: 4px;
+}
+
+.volumeBlock {
+  width: 100%;
+  height: 8px;
+  background: #444;
+  border: 1px solid #000;
 }
 
 .volumeBlock.active {
-  background: #00ffcc;
+  background: #00ff66;
 }
+
 
 #volumeLabel {
   font-family: 'Press Start 2P', cursive;
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 4px;
-  color: #ffffff;
+  margin-bottom: -20px;
+  text-shadow:
+    0 0 6px rgb(0, 195, 255),
+    0 0 12px rgb(11, 14, 235),
+    0 0 20px rgb(102, 7, 226),
+    0 0 6px rgb(25, 0, 255),
+    0 0 12px cyan,
+    0 0 20px cyan,
+    0 0 6px rgb(255, 0, 221),
+    0 0 12px rgb(247, 0, 255),
+    0 0 20px rgb(255, 0, 170);
+
   opacity: 100;
 }
 
@@ -610,19 +641,19 @@ image-rendering: pixelated;
 
 
 .realistic .riasec-header {
-  background: linear-gradient(135deg, #33be38, #1ffc2a);
+  background: linear-gradient(135deg, #22b627, #1ffc2a);
 }
 
 .investigative .riasec-header {
-  background: linear-gradient(135deg, #2196F3, #64b5f6);
+  background: linear-gradient(135deg, #1574c2, #64b5f6);
 }
 
 .artistic .riasec-header {
-  background: linear-gradient(135deg, #E91E63, #c71668);
+  background: linear-gradient(135deg, #a51c49, #ff0077);
 }
 
 .social .riasec-header {
-  background: linear-gradient(135deg, #9C27B0, #ba68c8);
+  background: linear-gradient(135deg, #9C27B0, #d900ff);
 }
 
 .enterprising .riasec-header {
@@ -808,3 +839,26 @@ image-rendering: pixelated;
   content: "▸ ";
   font-weight: bold;
 }
+.home-disclaimer {
+  margin: 25px auto 30px;
+  padding: 14px 16px;
+  max-width: 520px;
+
+  font-size: 11px;
+  line-height: 1.6;
+  color: #111;
+
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px dashed #000;
+  border-radius: 6px;
+
+  text-align: center;
+}
+
+.reflection-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
