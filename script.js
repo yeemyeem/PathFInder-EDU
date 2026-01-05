@@ -510,6 +510,7 @@ const riasecCareers = {
   I: {
     STEM: [
    "Software Developer",
+    "IT Specialist",
     "Data Analyst",
     "Research Scientist",
     "Laboratory Analyst",
@@ -1351,4 +1352,5 @@ if (backToResultsBtn) {
     window.scrollTo(0, 0);
   });
 }
+
 
