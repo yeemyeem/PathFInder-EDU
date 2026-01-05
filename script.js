@@ -20,7 +20,7 @@ const questions = [
     image: "Quiz Images/realistic-3.png"
   },
 
-  { text: "Do you prefer learning by doing rather than reading or listening?", 
+  { text: "Do you prefer learning by doing rather than reading or listening? (Cooking, Repairing, etc.)", 
     type: "R",
     image: "Quiz Images/realistic-4.png"
    },
@@ -367,6 +367,7 @@ const careerSuggestions = {
     STEM: [
       "Engineering & Industrial Technology",
       "Architecture",
+      "Culinary",
       "Skilled Trades & Technical Services",
       "Agricultural & Environmental Technology",
       "Construction & Infrastructure"
@@ -478,6 +479,7 @@ const riasecCareers = {
     "Architect",
     "Police Officer",
     "Fire FIghter",
+    "Chef",
     "Carpenter",
     "Farmer",
     "Aircraft Mechanic",
