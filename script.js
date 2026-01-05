@@ -192,6 +192,7 @@ const progressText = document.getElementById("progressText");
 const questionText = document.getElementById("questionText");
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
+const neutralBtn = document.getElementById("neutralBtn");
 const backBtn = document.getElementById("backBtn");
 const homeBox = document.getElementById("homeBox");
 const quizBox = document.getElementById("quizBox");
@@ -715,7 +716,7 @@ sortedResults.forEach(([type, score], index) => {
       <ul>
         ${riasecProfiles[type].activities.preferred.map(a => `<li>${a}</li>`).join("")}
       </ul>
-
+      <br>
       <h4>Activities Often Avoided</h4>
       <ul>
         ${riasecProfiles[type].activities.avoided.map(a => `<li>${a}</li>`).join("")}
@@ -1083,7 +1084,7 @@ function populateReflectionChart() {
     const value = scores[type];
 
     // Non-linear scaling (exaggerates higher values)
-    const heightPercent = ((value / MAX_SCORE) ** 1.3) * 100;
+    const heightPercent = ((value / MAX_SCORE) ** 2.5) * 100;
 
     bar.style.height = heightPercent + "%";
     scoreLabel.textContent = value;
@@ -1115,6 +1116,16 @@ noBtn.addEventListener("click", () => {
   nextQuestion();
 });
 
+neutralBtn.addEventListener("click", () => {
+  const type = questions[currentQuestionIndex].type;
+
+  scores[type] += 0.5;          // ⭐ Neutral = 0.5
+  answers[currentQuestionIndex] = "neutral";
+
+  nextQuestion();
+});
+
+
 backBtn.addEventListener("click", () => {
   if (currentQuestionIndex === 0) return;
 
@@ -1122,10 +1133,14 @@ backBtn.addEventListener("click", () => {
 
   const previousAnswer = answers[currentQuestionIndex];
 
-  if (previousAnswer === "yes") {
-    const type = questions[currentQuestionIndex].type;
-    scores[type]--;
-  }
+const type = questions[currentQuestionIndex].type;
+
+if (previousAnswer === "yes") {
+  scores[type] -= 1;
+} else if (previousAnswer === "neutral") {
+  scores[type] -= 0.5;
+}
+
 
   loadQuestion();
 });
@@ -1146,23 +1161,46 @@ startQuizBtn.addEventListener("click", () => {
   quizBox.style.display = "block";
   loadQuestion();
 });
-document.getElementById("homeBtn").addEventListener("click", () => {
-  quizBox.style.display = "none"; // hide quiz
-  homeBox.style.display = "block"; // show home page
+
+
+const restartBtn = document.getElementById("restartBtn");
+if (restartBtn) {
+  restartBtn.addEventListener("click", () => {
+    resetQuiz();
+  });
+}
+
+
+// HOME button (Quiz page)
+const homeBtn = document.getElementById("homeBtn");
+if (homeBtn) {
+homeBtn.addEventListener("click", () => {
+  quizBox.style.display = "none";
+  homeBox.style.display = "block";
+  window.scrollTo(0, 0);
 });
 
-const restartFromReflectionBtn = document.getElementById("restartFromReflectionBtn");
+}
 
-if (restartFromReflectionBtn) {
-  restartFromReflectionBtn.addEventListener("click", () => {
-    resetQuiz();
+// HOME button (Reflection page)
+const homeBtnReflection = document.getElementById("homeBtnReflection");
+if (homeBtnReflection) {
+  homeBtnReflection.addEventListener("click", () => {
+    resetQuiz(); // reset state
 
+    // then go home
+    document.getElementById("quizBox").style.display = "none";
+    document.getElementById("resultsBox").style.display = "none";
     document.getElementById("reflectionPage").style.display = "none";
-    document.getElementById("homeBox").style.display = "block";
+    homeBox.style.display = "block";
 
     window.scrollTo(0, 0);
   });
 }
+
+
+
+
 
 
 const aboutBtn = document.getElementById("aboutBtn");
@@ -1286,15 +1324,12 @@ document.getElementById("goToReflectionBtn").addEventListener("click", () => {
 });
 
 
-document.getElementById("backToResultsBtn").addEventListener("click", () => {
-  document.getElementById("reflectionPage").style.display = "none";
-  document.getElementById("resultsBox").style.display = "block";
-});
-
-// Restart quiz from Reflection page
-document.getElementById("restartFromReflectionBtn").addEventListener("click", () => {
-  resetQuiz();
-});
-
-
+const backToResultsBtn = document.getElementById("backToResultsBtn");
+if (backToResultsBtn) {
+  backToResultsBtn.addEventListener("click", () => {
+    document.getElementById("reflectionPage").style.display = "none";
+    document.getElementById("resultsBox").style.display = "block";
+    window.scrollTo(0, 0);
+  });
+}
 
