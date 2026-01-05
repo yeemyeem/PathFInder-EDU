@@ -510,7 +510,7 @@ const riasecCareers = {
   I: {
     STEM: [
    "Software Developer",
-    "IT Specialist",
+   "IT Specialist",
     "Data Analyst",
     "Research Scientist",
     "Laboratory Analyst",
@@ -691,6 +691,7 @@ sortedResults.forEach(([type, score], index) => {
     <span class="riasec-title">
       ${display.label} (${type})
     </span>
+    <span class="riasec-caret">▼</span>
   </div>
 
   <div class="riasec-body">
@@ -722,18 +723,6 @@ sortedResults.forEach(([type, score], index) => {
       </ul>
     </section>
 
-    <!-- ACTIVITIES -->
-    <section class="riasec-section">
-      <h4>Preferred Activities</h4>
-      <ul>
-        ${riasecProfiles[type].activities.preferred.map(a => `<li>${a}</li>`).join("")}
-      </ul>
-      <br>
-      <h4>Activities Often Avoided</h4>
-      <ul>
-        ${riasecProfiles[type].activities.avoided.map(a => `<li>${a}</li>`).join("")}
-      </ul>
-    </section>
 
     <!-- ENVIRONMENT -->
     <section class="riasec-section">
@@ -789,11 +778,8 @@ header.addEventListener("pointerleave", releaseHeader);
 header.addEventListener("pointercancel", releaseHeader);
 
 
-// Open the first (top result) by default
-if (index === 0) {
-  card.classList.add("active");
-}
 
+const caret = card.querySelector(".riasec-caret");
 
 header.addEventListener("click", () => {
   const isOpen = card.classList.contains("active");
@@ -801,13 +787,16 @@ header.addEventListener("click", () => {
   // Close all cards
   document.querySelectorAll(".riasec-card").forEach(c => {
     c.classList.remove("active");
+    c.querySelector(".riasec-caret").textContent = "▼";
   });
 
   // Toggle current card
   if (!isOpen) {
     card.classList.add("active");
+    caret.textContent = "▲";
   }
 });
+
 
 
   const buttons = card.querySelectorAll(".strand-btn");
@@ -898,17 +887,7 @@ or therapeutic activities.
       "Honest and dependable",
       "Prefers structured and tangible tasks"
     ],
-    activities: {
-      preferred: [
-        "Using tools, machines, or equipment",
-        "Building, repairing, or maintaining physical objects",
-        "Performing structured, hands-on tasks"
-      ],
-      avoided: [
-        "Highly social or persuasive activities",
-        "Abstract or therapeutic tasks"
-      ]
-    },
+
     environment: `
 Realistic environments emphasize technical competence, structured tasks,
 and tangible outcomes. These environments reward practical skills,
@@ -929,17 +908,7 @@ persuasive, repetitive, or highly social tasks.
       "Independent and cautious",
       "Enjoys intellectual challenges"
     ],
-    activities: {
-      preferred: [
-        "Researching and analyzing information",
-        "Solving complex problems",
-        "Working with data, theories, or experiments"
-      ],
-      avoided: [
-        "Sales-oriented or persuasive tasks",
-        "Highly routine or repetitive work"
-      ]
-    },
+  
     environment: `
 Investigative environments encourage scientific inquiry, analytical thinking,
 and independent problem-solving. These environments value knowledge,
@@ -960,17 +929,7 @@ structured tasks.
       "Independent and intuitive",
       "Values originality"
     ],
-    activities: {
-      preferred: [
-        "Creating art, designs, or written works",
-        "Expressing ideas creatively",
-        "Working in flexible environments"
-      ],
-      avoided: [
-        "Highly structured or repetitive tasks",
-        "Strict procedural work"
-      ]
-    },
+   
     environment: `
 Artistic environments are flexible and unstructured, encouraging originality
 and creative expression. These environments reward innovation,
@@ -990,17 +949,7 @@ and meaningful social interaction and often avoid highly technical or mechanical
       "Communicative and patient",
       "People-oriented"
     ],
-    activities: {
-      preferred: [
-        "Teaching or training others",
-        "Providing care or support",
-        "Collaborating in team-based settings"
-      ],
-      avoided: [
-        "Highly mechanical or technical tasks",
-        "Isolated or machine-focused work"
-      ]
-    },
+  
     environment: `
 Social environments emphasize cooperation, communication, and service.
 These environments reward empathy, interpersonal skills,
@@ -1020,17 +969,7 @@ achievement, and responsibility and often avoid highly analytical or routine tas
       "Goal-oriented",
       "Comfortable with leadership roles"
     ],
-    activities: {
-      preferred: [
-        "Leading teams or projects",
-        "Persuading or motivating others",
-        "Making decisions and taking initiative"
-      ],
-      avoided: [
-        "Highly theoretical or analytical work",
-        "Routine or repetitive tasks"
-      ]
-    },
+
     environment: `
 Enterprising environments are dynamic and goal-driven, rewarding leadership,
 initiative, and achievement. These environments value influence,
@@ -1050,17 +989,7 @@ accuracy, efficiency, and clear rules and often avoid ambiguous or unstructured 
       "Efficient and reliable",
       "Prefers clear procedures"
     ],
-    activities: {
-      preferred: [
-        "Organizing records and data",
-        "Following established systems",
-        "Managing details accurately"
-      ],
-      avoided: [
-        "Ambiguous or unstructured work",
-        "Highly creative or exploratory tasks"
-      ]
-    },
+   
     environment: `
 Conventional environments emphasize order, accuracy, and efficiency.
 These environments reward reliability, conformity to procedures,
@@ -1352,5 +1281,4 @@ if (backToResultsBtn) {
     window.scrollTo(0, 0);
   });
 }
-
 
