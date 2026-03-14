@@ -371,18 +371,20 @@ const riasecDisplay = {
 const careerSuggestions = {
   R: {
     STEM: [
-      "Engineering & Industrial Technology",
-      "Robotics/Computers",
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Computer Engineering",
       "Architecture",
-      "Culinary",
-      "Skilled Trades & Technical Services",
-      "Agricultural & Environmental Technology",
-      "Construction & Infrastructure"
-      
+      "Aviation Technology",
+      "Aircraft Maintenance Technology",
+      "Culinary Arts",
+      "Agricultural Science",
+      "Industrial Technology"
     ],
     ABM: [
-      "Operations & Facilities Management",
-      "Logistics & Supply Chain Operations"
+      "Operations Management",
+      "Logistics and Supply Chain Management",
+      "Business Administration"
     ],
     HUMSS: [
       "Environmental Planning",
@@ -393,87 +395,110 @@ const careerSuggestions = {
 
   I: {
     STEM: [
-     "Medical & Health Sciences",
-      "Natural & Physical Sciences",
-      "Engineering & Applied Sciences",
-      "Computer Science/Robotics",
-      "Information & Data Sciences"
+      "Computer Science",
+      "Information Technology",
+      "Data Science",
+      "Biology",
+      "Chemistry",
+      "Physics",
+      "Mathematics",
+      "Medical Technology",
+      "Pharmacy",
+      "Veterinary Medicine"
     ],
     ABM: [
-     "Business Analytics & Market Research",
-      "Economic & Policy Analysis"
+      "Business Analytics",
+      "Economics",
+      "Financial Management"
     ],
     HUMSS: [
       "Psychology",
       "Political Science",
-      "Sociology"
+      "Sociology",
+      "Geography"
     ]
   },
 
   A: {
     STEM: [
-      "Multimedia Technology",
-      "Game Design",
-      "Digital Animation"
+      "Multimedia Arts",
+      "Game Development",
+      "Digital Animation",
+      "Graphic Design",
+      "Music Technology"
     ],
     ABM: [
+      "Marketing Management",
       "Advertising",
-      "Brand Management",
       "Creative Entrepreneurship"
     ],
     HUMSS: [
-      "Creative Writing",
       "Fine Arts",
-      "Performing Arts",
-      "Media Studies"
+      "Creative Writing",
+      "Theater Arts",
+      "Communication Arts",
+      "Fashion Design"
     ]
   },
 
   S: {
     STEM: [
-      "Healthcare & Allied Health Services",
-      "Public Health & Wellness"
+      "Nursing",
+      "Public Health",
+      "Physical Therapy",
+      "Sports Science",
+      "Dentistry"
     ],
     ABM: [
-      "Human Resource Development",
-      "Training & Organizational Support"
+      "Human Resource Management",
+      "Training and Development"
     ],
     HUMSS: [
-      "Education & Teaching",
-      "Counseling & Social Services",
-      "Community & Human Development"
+      "Education",
+      "Social Work",
+      "Guidance and Counseling",
+      "Library and Information Science",
+      "Criminology"
     ]
   },
 
   E: {
     STEM: [
-      "Technology Innovation & Startups",
-      "Applied Innovation Management"
+      "Industrial Engineering",
+      "Technology Management",
+      "Innovation Management"
     ],
     ABM: [
-      "Entrepreneurship & Business Development",
-      "Sales, Marketing & Commercial Management",
-      "Hospitality & Service Management"
+      "Business Administration",
+      "Entrepreneurship",
+      "Marketing Management",
+      "Hospitality Management",
+      "Real Estate Management"
     ],
     HUMSS: [
-      "Law, Governance & Public Leadership",
-      "Media, Communication & Public Relations"
+      "Public Administration",
+      "Political Science",
+      "Communication",
+      "Law (Pre-Law Programs)"
     ]
   },
 
   C: {
     STEM: [
-      "Information Systems & Data Operations",
-      "Technical Information Management",
-      "Computerized Accounting"
+      "Information Systems",
+      "Computer Applications",
+      "Database Management"
     ],
     ABM: [
-      "Accounting, Finance & Bookkeeping",
-      "Banking & Financial Services"
+      "Accountancy",
+      "Financial Management",
+      "Banking and Finance",
+      "Office Administration"
     ],
     HUMSS: [
-      "Administrative & Records Management",
-       "Clerical & Office Support Services"
+      "Public Administration",
+      "Records Management",
+      "Legal Management"
     ]
   }
 };
@@ -487,7 +512,7 @@ const riasecCareers = {
     "Computer Engineer",
     "Architect",
     "Police Officer",
-    "Fire FIghter",
+    "Fire Fighter",
     "Chef",
     "Carpenter",
     "Farmer",
@@ -739,7 +764,7 @@ sortedResults.forEach(([type, score], index) => {
 
     <!-- CAREER FIELDS -->
     <section class="riasec-section">
-      <h4>Career Fields Commonly Associated</h4>
+      <h4>College Programs Associated</h4>
       <p class="college-programs"></p>
     </section>
 
