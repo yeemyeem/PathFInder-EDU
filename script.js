@@ -503,6 +503,114 @@ const careerSuggestions = {
   }
 };
 
+const AssociatedIndustry = { 
+  R: {
+    STEM: [
+      "Engineering & Industrial Technology",
+      "Robotics/Computers",
+      "Architecture",
+      "Culinary",
+      "Skilled Trades & Technical Services",
+      "Agricultural & Environmental Technology",
+      "Construction & Infrastructure"
+    ],
+    ABM: [
+      "Operations & Facilities Management",
+      "Logistics & Supply Chain Operations"
+    ],
+    HUMSS: [
+      "Environmental Planning",
+      "Community Development",
+      "Disaster Risk Management"
+    ]
+  },
+
+  I: {
+    STEM: [
+      "Medical & Health Sciences",
+      "Natural & Physical Sciences",
+      "Engineering & Applied Sciences",
+      "Computer Science/Robotics",
+      "Information & Data Sciences"
+    ],
+    ABM: [
+      "Business Analytics & Market Research",
+      "Economic & Policy Analysis"
+    ],
+    HUMSS: [
+      "Psychology",
+      "Political Science",
+      "Sociology"
+    ]
+  },
+
+  A: {
+    STEM: [
+      "Multimedia Technology",
+      "Game Design",
+      "Digital Animation"
+    ],
+    ABM: [
+      "Advertising",
+      "Brand Management",
+      "Creative Entrepreneurship"
+    ],
+    HUMSS: [
+      "Creative Writing",
+      "Fine Arts",
+      "Performing Arts",
+      "Media Studies"
+    ]
+  },
+
+  S: {
+    STEM: [
+      "Healthcare & Allied Health Services",
+      "Public Health & Wellness"
+    ],
+    ABM: [
+      "Human Resource Development",
+      "Training & Organizational Support"
+    ],
+    HUMSS: [
+      "Education & Teaching",
+      "Counseling & Social Services",
+      "Community & Human Development"
+    ]
+  },
+
+  E: {
+    STEM: [
+      "Technology Innovation & Startups",
+      "Applied Innovation Management"
+    ],
+    ABM: [
+      "Entrepreneurship & Business Development",
+      "Sales, Marketing & Commercial Management",
+      "Hospitality & Service Management"
+    ],
+    HUMSS: [
+      "Law, Governance & Public Leadership",
+      "Media, Communication & Public Relations"
+    ]
+  },
+
+  C: {
+    STEM: [
+      "Information Systems & Data Operations",
+      "Technical Information Management",
+      "Computerized Accounting"
+    ],
+    ABM: [
+      "Accounting, Finance & Bookkeeping",
+      "Banking & Financial Services"
+    ],
+    HUMSS: [
+      "Administrative & Records Management",
+      "Clerical & Office Support Services"
+    ]
+  }
+};
 
 const riasecCareers = {
   R: {
@@ -764,9 +872,15 @@ sortedResults.forEach(([type, score], index) => {
 
     <!-- CAREER FIELDS -->
     <section class="riasec-section">
-      <h4>College Programs Associated</h4>
+      <h4>Example of College Programs Associated</h4>
       <p class="college-programs"></p>
     </section>
+
+    <!-- INDUSTRY -->
+<section class="riasec-section">
+  <h4>Related Career Fields</h4>
+  <ul class="industry-list"></ul>
+</section>
 
     <!-- OCCUPATIONS -->
     <section class="riasec-section">
@@ -830,18 +944,30 @@ header.addEventListener("click", () => {
   // Update career list + college programs
 function updateCard(strand) {
   const list = card.querySelector(".career-list");
-  list.innerHTML = "";
+  const industryList = card.querySelector(".industry-list");
 
-  // 🔑 toggle grid layout only for STEM
+  list.innerHTML = "";
+  industryList.innerHTML = "";
+
+  // STEM grid layout
   list.classList.toggle("stem-grid", strand === "STEM");
 
+  // CAREERS
   riasecCareers[type][strand].forEach(career => {
     const li = document.createElement("li");
     li.textContent = career;
     list.appendChild(li);
   });
 
+  // COLLEGE PROGRAMS
   collegeSpan.textContent = careers[strand].join(", ");
+
+  // INDUSTRY
+  AssociatedIndustry[type][strand].forEach(field => {
+    const li = document.createElement("li");
+    li.textContent = field;
+    industryList.appendChild(li);
+  });
 }
 
 
@@ -853,9 +979,34 @@ function updateCard(strand) {
     });
   });
 
-  // Default = STEM
+    // Default = STEM
   updateCard("STEM");
 });
+
+
+// ======================
+// COURSE FINDER CONTAINER
+// ======================
+const reminderContainer = document.createElement("div");
+reminderContainer.className = "coursefinder-container";
+
+reminderContainer.innerHTML = `
+  <div class="coursefinder-box">
+    <h3 style="color: #ffffffff;">Find Colleges Offering These Programs</h3>
+
+    <p style="color: #000000ff;">
+      Want to explore colleges and universities in the Philippines that offer
+      programs related to your interests? Use the Course Finder to search for
+      schools offering courses connected to your recommended careers.
+    </p>
+
+    <button style="color: #ffffffff;" class="coursefinder-btn" onclick="window.open('https://coursefinder.ph/', '_blank')">
+      Open Course Finder
+    </button>
+  </div>
+`;
+
+document.getElementById("resultsList").appendChild(reminderContainer);
 
 }
 
@@ -1057,9 +1208,55 @@ function populateReflectionChart() {
   });
 }
 
+function showTopInsight() {
 
+  const sorted = Object.entries(scores)
+    .sort((a,b) => b[1] - a[1])
+    .slice(0,3)
+    .map(entry => entry[0]);
 
+  const top1 = sorted[0];
+  const top2 = sorted[1];
+  const top3 = sorted[2];
 
+  const label1 = riasecDisplay[top1].label;
+  const label2 = riasecDisplay[top2].label;
+  const label3 = riasecDisplay[top3].label;
+
+  const box = document.getElementById("topInsightBox");
+
+  box.innerHTML = `
+    <h3 margin-top:-60px; marhin-bottom: 40px>Your Career Interest Pattern</h3>
+
+    <p>
+      Your strongest interest types are 
+      <span style="color:${riasecColors[top1]}; font-weight:bold;">${label1}</span>, 
+      <span style="color:${riasecColors[top2]}; font-weight:bold;">${label2}</span>, 
+      and 
+      <span style="color:${riasecColors[top3]}; font-weight:bold;">${label3}</span>.
+    </p>
+
+    <p>
+      This combination suggests that you may enjoy activities and careers
+      that reflect the strengths of these personality types. The suggested
+      careers and college programs earlier were based on this pattern.
+    </p>
+
+    <p>
+      Understanding your interests can help guide you when exploring
+      possible college courses and future career paths.
+    </p>
+  `;
+}
+
+const riasecColors = {
+  R: "#4CAF50",   // Realistic
+  I: "#2196F3",   // Investigative
+  A: "#ff0077",   // Artistic
+  S: "#d900ff",   // Social
+  E: "#FF9800",   // Enterprising
+  C: "#ffe600"    // Conventional
+};
 
 
 
@@ -1110,6 +1307,7 @@ if (previousAnswer === "yes") {
 
   loadQuestion();
 });
+
 
 const resultDisclaimer = `
 Career results are based on Holland’s RIASEC Theory of Vocational Personalities
@@ -1292,8 +1490,8 @@ document.getElementById("goToReflectionBtn").addEventListener("click", () => {
   document.getElementById("resultsBox").style.display = "none";
   document.getElementById("reflectionPage").style.display = "block";
 
-  populateReflectionChart(); // ✅ CALL IT HERE
-
+  populateReflectionChart();
+  showTopInsight();
   window.scrollTo(0, 0);
 });
 
