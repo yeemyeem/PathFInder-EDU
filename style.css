@@ -862,3 +862,55 @@ image-rendering: pixelated;
   margin-top: 20px;
 }
 
+.coursefinder-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.coursefinder-box {
+  background: #00a2ff;
+  border: 5px solid #000000;
+  padding: 5px;
+  margin-top: -20px;
+  border-radius: 10px;
+  max-width: 650px;
+  text-align: center;
+}
+
+.coursefinder-box h3 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.coursefinder-box p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+  margin-left: 10px;
+}
+
+.coursefinder-btn {
+  padding: 12px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #0033ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.coursefinder-btn:hover {
+  background: #1ac404;
+}
+
+.top-insight{
+  margin-top:10px;
+  padding:5px;
+  background:#bec5ca;
+  border-left:6px solid #ffcc00;
+  border-radius:5px;
+  max-width:800px;
+}
