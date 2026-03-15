@@ -245,7 +245,7 @@ No personal data or responses are collected or stored by the system.</p>
 
 
   <button id="goToReflectionBtn" style="margin-top: 30px;">
-    Proceed to Reflection
+    Proceed to Summary
   </button>
 </div>
 
@@ -253,7 +253,7 @@ No personal data or responses are collected or stored by the system.</p>
 <!-- REFLECTION PAGE -->
 <div id="reflectionPage" style="display:none; background:#fff; color:#000; padding:40px;">  
 
-  <h1 style="margin-top: -30px;">Reflection Page</h1>
+  <h1 style="margin-top: -30px;">Career Insight Summary</h1>
 
 <h3>Your RIASEC Score Distribution</h3>
 
@@ -295,19 +295,28 @@ No personal data or responses are collected or stored by the system.</p>
   </div>
 </div>
 
+<div id="topInsightBox" class="top-insight"></div>
 
-<h2>Your Career Reflection</h2>
+<div class="posttest-section">
+  
+  <h4 style="line-height: 20px;color: red;">Please Dont Forget To Take a ScreenShot of This Page!</h4>
+  <h3 border-radius: 10px>Post-Assessment</h3>
+  <p margin-top: -30px>
+    If you are ready, please proceed to the post-test. This will help measure
+    how the Interactive Career Pathfinder influenced your understanding
+    of possible career paths.
+  </p>
 
-<p style="font-size: 12px; max-width: 650px; margin: 0 auto 20px;">
-  Which suggested career interests you most, and why? Please Take a screenshot of this page and upload it as proof of completion. Thankyou!
-</p>
+  <button 
+    class="posttest-btn"
+    onclick="window.open('https://forms.gle/kvsfznV3EAqpFBi96','_blank')">
 
-  <textarea
-    id="reflectionBox"
-    rows="6"
-    style="width:90%; font-size:16px;">
-  </textarea>
+    Take the Post-Test
+  </button>
 
+</div>
+
+ 
   <br><br>
 
 <div class="reflection-actions">
